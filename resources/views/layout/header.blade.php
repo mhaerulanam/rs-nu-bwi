@@ -1,43 +1,16 @@
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
 <!--Header Upper-->
 <section class="header-uper">
     <div class="container clearfix">
         <div class="logo">
             <figure>
                 <a href="index.html">
-                    <img src="{{ asset('assets/logo/logo-rs-nu-bwi.png')}}" width="100" style="margin: 16px" alt="">
+                    <img src="{{ asset('assets/logo/logo-rs-nu-bwi.png') }}" width="100" style="margin: 16px"
+                        alt="">
                 </a>
             </figure>
         </div>
     </div>
-    {{--  <div class="container clearfix">
-
-        <div class="left-side">
-            <ul class="contact-info">
-                <li class="item">
-                    <div class="icon-box">
-                        <i class="fa fa-envelope-o"></i>
-                    </div>
-                    <strong>Email</strong>
-                    <br>
-                    <a href="#">
-                        <span>info@medic.com</span>
-                    </a>
-                </li>
-                <li class="item">
-                    <div class="icon-box">
-                        <i class="fa fa-phone"></i>
-                    </div>
-                    <strong>Call Now</strong>
-                    <br>
-                    <span>+ (88017) - 123 - 4567</span>
-                </li>
-            </ul>
-            <div class="link-btn">
-                <a href="#" class="btn-style-one">Appoinment</a>
-            </div>
-        </div>
-    </div>  --}}
 </section>
 <!--Header Upper-->
 
@@ -58,15 +31,31 @@
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
-                <li class="{{ Request::segment(1) == '' || Request::segment(1) == 'beranda'  ? 'active' : '' }}">
-                    <a href="beranda">Beranda</a>
-                </li>
-                <li class="dropdown">
+                {{--  <li class="dropdown">
                     <a href="#" class="dropbtn">Profil Rumah Sakit</a>
                     <ul class="dropdown-content">
                         <a href="#">Anggota</a>
                         <a href="#">Buku</a>
                         <a href="#">Kategori Buku</a>
+                    </ul>
+                </li>  --}}
+                <li class="{{ Request::segment(1) == '' || Request::segment(1) == 'beranda' ? 'active' : '' }}">
+                    <a href="/beranda">Beranda</a>
+                </li>
+                <li class="dropdown {{ Request::segment(2) == 'sejarah' ? 'active' : '' }}">
+                    <a href="#" class="dropdown-toggle"
+                        data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Profile RS <span
+                            class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a
+                                href="/user/sejarah">Sejarah</a>
+                        </li>
+                        <li role="separator" class="divider"></li>
+                        <li><a
+                                href="">Forms</a>
+                        </li>
+                        <li role="separator" class="divider"></li>
+                        <li><a href="">Select</a></li>
                     </ul>
                 </li>
                 <li>

@@ -1,13 +1,13 @@
-(function($) {	
-	"use strict";	
-	
+(function($) {
+	"use strict";
+
 	//1.Hide Loading Box (Preloader)
 	function handlePreloader() {
 		if($('.preloader').length){
 			$('.preloader').delay(200).fadeOut(500);
 		}
-	}	
-	
+	}
+
 	//6.Scroll to a Specific Div
 	if($('.scroll-to-target').length){
 		$(".scroll-to-target").click('click', function() {
@@ -16,7 +16,7 @@
 		   $('html, body').animate({
 			   scrollTop: $(target).offset().top
 			 }, 1000);
-	
+
 		});
 	}
 
@@ -77,7 +77,7 @@
 	    };
 	}
 
-	//27.Select menu 
+	//27.Select menu
 	function selectDropdown() {
 	    if ($(".selectmenu").length) {
 	        $(".selectmenu").selectmenu();
@@ -87,8 +87,8 @@
 	        };
 	        $(".selectmenu").selectmenu({ change: changeSelectMenu });
 	    };
-	}	
-	
+	}
+
 	//28.Elements Animation
 	if($('.wow').length){
 		var wow = new WOW(
@@ -169,7 +169,7 @@
 			}
 		]
 	});
-	
+
 	// FancyBox Video
 	$('[data-fancybox]').fancybox({
 		youtube: {

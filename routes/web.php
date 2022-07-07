@@ -19,6 +19,7 @@ use Illuminate\Support\Facades\Route;
 Route::group(['namespace' => 'App\Http\Controllers\Frontend'], function() {
     Route::get('/', 'BerandaController@index');
     Route::get('/beranda', 'BerandaController@index');
+    Route::get('/user/sejarah', 'SejarahController@index');
 });
 
 // URI Route Backend

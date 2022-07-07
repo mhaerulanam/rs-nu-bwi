@@ -15,7 +15,7 @@
                 enctype="multipart/form-data">
                 @csrf
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel4">Tambah Data Fasilitas</h5>
+                    <h5 class="modal-title" id="exampleModalLabel4">Tambah Data Sejarah</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
@@ -28,7 +28,7 @@
                     </div>
                     <div class="row">
                         <div class="col mb-3">
-                            <label for="deskripsi" class="form-label">Deskripsi Fasilitas</label>
+                            <label for="deskripsi" class="form-label">Deskripsi Sejarah</label>
                             <textarea id="description" name="description" rows="4" class="form-control" cols="50"></textarea>
                         </div>
                     </div>
