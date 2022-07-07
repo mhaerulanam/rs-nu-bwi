@@ -28,5 +28,10 @@ Route::group(['namespace' => 'App\Http\Controllers\Backend'], function() {
     Route::resource('/fasilitas', 'FasilitasController');
     Route::resource('/article', 'ArticleController');
     Route::resource('/category-article', 'CategoryArticleController');
+
+    Route::resource('/sejarah', 'SejarahController');
+    Route::resource('/visimisi', 'VisiMisiTujuanController');
+    Route::resource('/struktur', 'StrukturController');
+    Route::resource('/staf', 'StafController');
 });
 

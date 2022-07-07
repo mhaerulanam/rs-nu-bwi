@@ -14,6 +14,7 @@
 
 <!-- Stylesheets -->
 <link href="{{ asset('frontend/css/style.css')}}" rel="stylesheet">
+<link href="{{ asset('frontend/css/custom.css')}}" rel="stylesheet">
 
 <!--Favicon-->
 <link rel="shortcut icon" href="{{ asset('frontend/images/favicon.ico')}}" type="image/x-icon">

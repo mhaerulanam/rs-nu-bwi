@@ -1,8 +1,8 @@
 @extends('layout')
 @section('content')
     <!--=================================
-                                        =            Page Slider            =
-                                        ==================================-->
+    =            Page Slider            =
+    ==================================-->
     <div class="hero-slider">
         @if (!$banners->isEmpty())
             @foreach ($banners as $no => $data)

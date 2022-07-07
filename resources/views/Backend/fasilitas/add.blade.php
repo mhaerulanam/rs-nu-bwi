@@ -1,5 +1,5 @@
 <div class="card-header d-flex align-items-center justify-content-between">
-    <h5 class="mb-0">Tabel Data Fasilitas</h5>
+    <h5 class="mb-0">Tabel Data Staf</h5>
     <small class="text-muted float-end" style="margin-right: 24px">
         <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exLargeModal">
             ++ Tambah Data

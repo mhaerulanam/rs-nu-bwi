@@ -1,3 +1,4 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <!--Header Upper-->
 <section class="header-uper">
     <div class="container clearfix">
@@ -60,8 +61,13 @@
                 <li class="{{ Request::segment(1) == '' || Request::segment(1) == 'beranda'  ? 'active' : '' }}">
                     <a href="beranda">Beranda</a>
                 </li>
-                <li>
-                    <a href="#">Profil Rumah Sakit</a>
+                <li class="dropdown">
+                    <a href="#" class="dropbtn">Profil Rumah Sakit</a>
+                    <ul class="dropdown-content">
+                        <a href="#">Anggota</a>
+                        <a href="#">Buku</a>
+                        <a href="#">Kategori Buku</a>
+                    </ul>
                 </li>
                 <li>
                     <a href="#">Informasi</a>

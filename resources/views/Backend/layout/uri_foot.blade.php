@@ -33,4 +33,14 @@
     <script src="{{ asset('backend/datatable/jquery_datatable.min.js')}}"></script>
     <script src="{{ asset('backend/datatable/datatable_bootstrap.min.js')}}"></script>
 
+    {{--  CkEditor  --}}
+    <script src="{{asset('assets/ckeditor/ckeditor.js')}}"></script>
+    <script>
+    var konten = document.getElementById("konten");
+        CKEDITOR.replace(konten,{
+        language:'en-gb'
+    });
+    CKEDITOR.config.allowedContent = true;
+    </script>
+
 

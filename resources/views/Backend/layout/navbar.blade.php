@@ -95,6 +95,50 @@
                         </li>
                     </ul>
                 </li>
+                <li
+                    class="{{ Request::segment(1) == 'sejarah' ||
+                    Request::segment(1) == 'visimisi' ||
+                    Request::segment(1) == 'struktur' ||
+                    Request::segment(1) == 'staf'
+                        ? 'menu-item active open'
+                        : 'menu-item' }}">
+                    <a href="javascript:void(0);" class="menu-link menu-toggle">
+                        <i class="menu-icon tf-icons bx bx-home-circle"></i>
+                        <div data-i18n="Analytics">Profile RS</div>
+                    </a>
+
+                    <ul class="menu-sub">
+                        <li class="{{ Request::segment(1) == 'sejarah' ? 'menu-item active' : 'menu-item' }}">
+                            <a href="/sejarah" class="menu-link">
+                                <div data-i18n="Without menu">Sejarah</div>
+                            </a>
+                        </li>
+                    </ul>
+
+                    <ul class="menu-sub">
+                        <li class="{{ Request::segment(1) == 'visimisi' ? 'menu-item active' : 'menu-item' }}">
+                            <a href="/visimisi" class="menu-link">
+                                <div data-i18n="Without menu">Visi Misi Strategi</div>
+                            </a>
+                        </li>
+                    </ul>
+
+                    <ul class="menu-sub">
+                        <li class="{{ Request::segment(1) == 'staf' ? 'menu-item active' : 'menu-item' }}">
+                            <a href="/staf" class="menu-link">
+                                <div data-i18n="Without menu">Staf</div>
+                            </a>
+                        </li>
+                    </ul>
+
+                    <ul class="menu-sub">
+                        <li class="{{ Request::segment(1) == 'struktur' ? 'menu-item active' : 'menu-item' }}">
+                            <a href="/struktur" class="menu-link">
+                                <div data-i18n="Without menu">Struktur Organisasi</div>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
             </ul>
         </aside>
         <!-- / Menu -->
@@ -117,7 +161,8 @@
                             <a class="nav-link dropdown-toggle hide-arrow" href="javascript:void(0);"
                                 data-bs-toggle="dropdown">
                                 <div class="avatar avatar-online">
-                                    <img src="../assets/img/avatars/1.png" alt class="w-px-40 h-auto rounded-circle" />
+                                    <img src="../assets/img/avatars/1.png" alt
+                                        class="w-px-40 h-auto rounded-circle" />
                                 </div>
                             </a>
                             <ul class="dropdown-menu dropdown-menu-end">
