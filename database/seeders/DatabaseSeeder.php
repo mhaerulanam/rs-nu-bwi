@@ -24,6 +24,8 @@ class DatabaseSeeder extends Seeder
         $this->call([
             VisiMisiSeeder::class,
             StrukturSeeder::class,
+            AlurInapSeeder::class,
+            AlurIGDSeeder::class,
         ]);
     }
 }

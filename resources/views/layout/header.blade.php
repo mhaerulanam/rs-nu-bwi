@@ -47,15 +47,16 @@
                         data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Profile RS <span
                             class="caret"></span></a>
                     <ul class="dropdown-menu">
-                        <li><a
+                        <li><a class="{{ Request::segment(2) == 'sejarah' ? '' : 'light-style' }}"
                                 href="/user/sejarah">Sejarah</a>
                         </li>
                         <li role="separator" class="divider"></li>
-                        <li><a
-                                href="">Forms</a>
+                        <li><a class="light-style"
+                                href="">Visi, Misi & Strategi</a>
                         </li>
                         <li role="separator" class="divider"></li>
-                        <li><a href="">Select</a></li>
+                        <li><a class="light-style"
+                            href="">Struktur Organisasi</a></li>
                     </ul>
                 </li>
                 <li>

@@ -31,6 +31,7 @@
 
 .navbar-default .navbar-nav > li > .dropdown-menu > li > a {
     color: #d7e2e9;
+    font-style: normal !important;
 }
 
 .navbar-default .navbar-nav > li > .dropdown-menu > li > a:hover,
@@ -129,5 +130,10 @@
 
 .service-section .inner-box {
     border: 1px solid #ffaa01;
+}
 
+
+.light-style {
+    font-weight: normal !important;
+    font-size: 14px !important;
 }

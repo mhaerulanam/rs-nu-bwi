@@ -41,7 +41,7 @@
                     <div class="row">
                         <div class="col mb-3">
                             <label for="deskripsi" class="form-label">Konten Artikel</label>
-                            <textarea id="description" name="description" rows="4" class="form-control" cols="50"></textarea>
+                            <textarea id="konten" class="form-control" name="description" rows="10" cols="50"></textarea>
                         </div>
                     </div>
                     <div class="row g-2">

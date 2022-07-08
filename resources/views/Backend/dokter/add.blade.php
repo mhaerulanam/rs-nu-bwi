@@ -1,5 +1,5 @@
 <div class="card-header d-flex align-items-center justify-content-between">
-    <h5 class="mb-0">Tabel Data Sejarah</h5>
+    <h5 class="mb-0">Tabel Data Dokter</h5>
     <small class="text-muted float-end" style="margin-right: 24px">
         <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exLargeModal">
             ++ Tambah Data
@@ -11,25 +11,37 @@
 <div class="modal fade" id="exLargeModal" tabindex="-1" aria-hidden="true">
     <div class="modal-dialog modal-xl" role="document">
         <div class="modal-content">
-            <form name="add-blog-post-form" id="add-blog-post-form" method="post" action="{{ url('sejarah') }}"
+            <form name="add-blog-post-form" id="add-blog-post-form" method="post" action="{{ url('dokter') }}"
                 enctype="multipart/form-data">
                 @csrf
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel4">Tambah Data Sejarah</h5>
+                    <h5 class="modal-title" id="exampleModalLabel4">Tambah Data Dokter</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <div class="row">
-                        <div class="col mb-3">
-                            <label for="nameExLarge" class="form-label">Judul Sejarah</label>
+                    <div class="row g-2">
+                        <div class="col mb-0">
+                            <label for="nameExLarge" class="form-label">Nama Lengkap</label>
                             <input type="text" id="nameExLarge" class="form-control" name="name"
-                                placeholder="Masukkan Judul Sejarah" />
+                                placeholder="Masukkan Nama Lengkap" />
+                        </div>
+                        <div class="col mb-0">
+                            <div class="mb-3">
+                                <label for="exampleFormControlSelect1" class="form-label">Jabatan</label>
+                                <select class="form-select" id="exampleFormControlSelect1" name="id_jabatan" required
+                                    aria-label="Default select example">
+                                    <option selected disabled>Pilih Jabatan</option>
+                                    @foreach ($jabatan as $data_jabatan)
+                                        <option value="{{ $data_jabatan->id }}">{{ $data_jabatan->jabatan}}</option>
+                                    @endforeach
+                                </select>
+                            </div>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col mb-3">
-                            <label for="deskripsi" class="form-label">Deskripsi Sejarah</label>
-                            <textarea id="konten" class="form-control" name="description" rows="10" cols="50"></textarea>
+                            <label for="deskripsi" class="form-label">Jadwal</label>
+                            <textarea id="konten" name="jadwal" rows="10" class="form-control" cols="50"></textarea>
                         </div>
                     </div>
                     <div class="row g-2">
@@ -40,7 +52,8 @@
                         <div class="col mb-0">
                             <div class="form-check mt-3">
                                 <input type="hidden" name="status" value="0">
-                                <input type="checkbox" value="1" class="form-check-input" id="scales" name="status">
+                                <input type="checkbox" value="1" class="form-check-input" id="scales"
+                                    name="status">
                                 <label class="form-check-label" for="defaultCheck1"> Status </label>
                             </div>
                         </div>

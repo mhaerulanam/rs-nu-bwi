@@ -1,0 +1,29 @@
+<table id="example" class="table table-striped table-bordered" style="width:100%">
+    <thead>
+        <tr>
+            <th>Image</th>
+            <th>Aksi</th>
+        </tr>
+    </thead>
+    <tbody>
+        @forelse ($igds as $data)
+            <tr>
+                <td>
+                    @if ($data['image'] != null || $data['image'] != '')
+                        <img src="/upload/igd/{{ $data->image }}" width="800">
+                    @else
+                        <span style="color: red">Tidak ada gambar</span>
+                    @endif
+                </td>
+                <td class="text-center">
+                    <a href="{{ route('alur-igd.edit', $data->id) }}"
+                        class="btn btn-warning">EDIT</a>
+                </td>
+            </tr>
+        @empty
+            <tr>
+                <td class="text-center text-mute" colspan="4">Data tidak tersedia</td>
+            </tr>
+        @endforelse
+    </tbody>
+</table>

@@ -16,14 +16,14 @@ use Illuminate\Support\Facades\Route;
 
 
 // URI Route Frontend
-Route::group(['namespace' => 'App\Http\Controllers\Frontend'], function() {
+Route::group(['namespace' => 'App\Http\Controllers\Frontend'], function () {
     Route::get('/', 'BerandaController@index');
     Route::get('/beranda', 'BerandaController@index');
     Route::get('/user/sejarah', 'SejarahController@index');
 });
 
 // URI Route Backend
-Route::group(['namespace' => 'App\Http\Controllers\Backend'], function() {
+Route::group(['namespace' => 'App\Http\Controllers\Backend'], function () {
     Route::resource('/dashboard', 'BannerController');
     Route::resource('/banner', 'BannerController');
     Route::resource('/fasilitas', 'FasilitasController');
@@ -34,5 +34,12 @@ Route::group(['namespace' => 'App\Http\Controllers\Backend'], function() {
     Route::resource('/visimisi', 'VisiMisiTujuanController');
     Route::resource('/struktur', 'StrukturController');
     Route::resource('/staf', 'StafController');
+
+    Route::resource('/dokter', 'DokterController');
+    Route::resource('/jabatan-dokter', 'JabatanDokterController');
+    Route::resource('/alur-inap', 'AlurInapController');
+    Route::resource('/alur-jalan', 'AlurJalanController');
+    Route::resource('/alur-igd', 'AlurIGDController');
 });
+
 

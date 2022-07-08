@@ -69,7 +69,7 @@
                         ? 'menu-item active open'
                         : 'menu-item' }}">
                     <a href="javascript:void(0);" class="menu-link menu-toggle">
-                        <i class="menu-icon tf-icons bx bx-home-circle"></i>
+                        <i class="menu-icon tf-icons bx bx-layout"></i>
                         <div data-i18n="Analytics">Dashboard</div>
                     </a>
 
@@ -139,6 +139,52 @@
                         </li>
                     </ul>
                 </li>
+
+                <li
+                class="{{ Request::segment(1) == 'dokter' ||
+                Request::segment(1) == 'alur-inap' ||
+                Request::segment(1) == 'alur-jalan' ||
+                Request::segment(1) == 'alur-igd'
+                    ? 'menu-item active open'
+                    : 'menu-item' }}">
+                <a href="javascript:void(0);" class="menu-link menu-toggle">
+                    <i class="menu-icon tf-icons bx bx-detail"></i>
+                    <div data-i18n="Analytics">Informasi</div>
+                </a>
+
+                <ul class="menu-sub">
+                    <li class="{{ Request::segment(1) == 'dokter' ? 'menu-item active' : 'menu-item' }}">
+                        <a href="/dokter" class="menu-link">
+                            <div data-i18n="Without menu">Dokter & Jadwal</div>
+                        </a>
+                    </li>
+                </ul>
+
+                <ul class="menu-sub">
+                    <li class="{{ Request::segment(1) == 'alur-inap' ? 'menu-item active' : 'menu-item' }}">
+                        <a href="/alur-inap" class="menu-link">
+                            <div data-i18n="Without menu">Alur Pasien Rawat Inap</div>
+                        </a>
+                    </li>
+                </ul>
+
+                <ul class="menu-sub">
+                    <li class="{{ Request::segment(1) == 'alur-jalan' ? 'menu-item active' : 'menu-item' }}">
+                        <a href="/alur-jalan" class="menu-link">
+                            <div data-i18n="Without menu">Alur Pasien Rawat Jalan</div>
+                        </a>
+                    </li>
+                </ul>
+
+
+                <ul class="menu-sub">
+                    <li class="{{ Request::segment(1) == 'alur-igd' ? 'menu-item active' : 'menu-item' }}">
+                        <a href="/alur-igd" class="menu-link">
+                            <div data-i18n="Without menu">Alur Pasien IGD</div>
+                        </a>
+                    </li>
+                </ul>
+            </li>
             </ul>
         </aside>
         <!-- / Menu -->

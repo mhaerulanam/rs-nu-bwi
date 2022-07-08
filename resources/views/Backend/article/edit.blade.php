@@ -62,7 +62,7 @@
                             <div class="row">
                                 <div class="col mb-3">
                                     <label for="deskripsi" class="form-label">Deskripsi Fasilitas</label>
-                                    <textarea id="description" name="description" rows="4" class="form-control" cols="50">{{ isset($articles->description) ? $articles->description : '' }}
+                                    <textarea id="konten" name="description" rows="10" class="form-control" cols="50">{{ isset($articles->description) ? $articles->description : '' }}
                                     </textarea>
                                 </div>
                             </div>
