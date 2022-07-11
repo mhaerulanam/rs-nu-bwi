@@ -141,50 +141,113 @@
                 </li>
 
                 <li
-                class="{{ Request::segment(1) == 'dokter' ||
-                Request::segment(1) == 'alur-inap' ||
-                Request::segment(1) == 'alur-jalan' ||
-                Request::segment(1) == 'alur-igd'
-                    ? 'menu-item active open'
-                    : 'menu-item' }}">
-                <a href="javascript:void(0);" class="menu-link menu-toggle">
-                    <i class="menu-icon tf-icons bx bx-detail"></i>
-                    <div data-i18n="Analytics">Informasi</div>
-                </a>
+                    class="{{ Request::segment(1) == 'dokter' ||
+                    Request::segment(1) == 'alur-inap' ||
+                    Request::segment(1) == 'alur-jalan' ||
+                    Request::segment(1) == 'alur-igd' ||
+                    Request::segment(1) == 'bpjs' ||
+                    Request::segment(1) == 'jadwal-kegiatan'
+                        ? 'menu-item active open'
+                        : 'menu-item' }}">
+                    <a href="javascript:void(0);" class="menu-link menu-toggle">
+                        <i class="menu-icon tf-icons bx bx-detail"></i>
+                        <div data-i18n="Analytics">Informasi</div>
+                    </a>
 
-                <ul class="menu-sub">
-                    <li class="{{ Request::segment(1) == 'dokter' ? 'menu-item active' : 'menu-item' }}">
-                        <a href="/dokter" class="menu-link">
-                            <div data-i18n="Without menu">Dokter & Jadwal</div>
-                        </a>
-                    </li>
-                </ul>
+                    <ul class="menu-sub">
+                        <li class="{{ Request::segment(1) == 'dokter' ? 'menu-item active' : 'menu-item' }}">
+                            <a href="/dokter" class="menu-link">
+                                <div data-i18n="Without menu">Dokter & Jadwal</div>
+                            </a>
+                        </li>
+                    </ul>
 
-                <ul class="menu-sub">
-                    <li class="{{ Request::segment(1) == 'alur-inap' ? 'menu-item active' : 'menu-item' }}">
-                        <a href="/alur-inap" class="menu-link">
-                            <div data-i18n="Without menu">Alur Pasien Rawat Inap</div>
-                        </a>
-                    </li>
-                </ul>
+                    <ul class="menu-sub">
+                        <li class="{{ Request::segment(1) == 'alur-inap' ? 'menu-item active' : 'menu-item' }}">
+                            <a href="/alur-inap" class="menu-link">
+                                <div data-i18n="Without menu">Alur Pasien Rawat Inap</div>
+                            </a>
+                        </li>
+                    </ul>
 
-                <ul class="menu-sub">
-                    <li class="{{ Request::segment(1) == 'alur-jalan' ? 'menu-item active' : 'menu-item' }}">
-                        <a href="/alur-jalan" class="menu-link">
-                            <div data-i18n="Without menu">Alur Pasien Rawat Jalan</div>
-                        </a>
-                    </li>
-                </ul>
+                    <ul class="menu-sub">
+                        <li class="{{ Request::segment(1) == 'alur-jalan' ? 'menu-item active' : 'menu-item' }}">
+                            <a href="/alur-jalan" class="menu-link">
+                                <div data-i18n="Without menu">Alur Pasien Rawat Jalan</div>
+                            </a>
+                        </li>
+                    </ul>
 
+                    <ul class="menu-sub">
+                        <li class="{{ Request::segment(1) == 'alur-igd' ? 'menu-item active' : 'menu-item' }}">
+                            <a href="/alur-igd" class="menu-link">
+                                <div data-i18n="Without menu">Alur Pasien IGD</div>
+                            </a>
+                        </li>
+                    </ul>
 
-                <ul class="menu-sub">
-                    <li class="{{ Request::segment(1) == 'alur-igd' ? 'menu-item active' : 'menu-item' }}">
-                        <a href="/alur-igd" class="menu-link">
-                            <div data-i18n="Without menu">Alur Pasien IGD</div>
-                        </a>
-                    </li>
-                </ul>
-            </li>
+                    <ul class="menu-sub">
+                        <li class="{{ Request::segment(1) == 'bpjs' ? 'menu-item active' : 'menu-item' }}">
+                            <a href="/bpjs" class="menu-link">
+                                <div data-i18n="Without menu">BPJS Kesehatan</div>
+                            </a>
+                        </li>
+                    </ul>
+
+                    <ul class="menu-sub">
+                        <li
+                            class="{{ Request::segment(1) == 'jadwal-kegiatan' ? 'menu-item active' : 'menu-item' }}">
+                            <a href="/jadwal-kegiatan" class="menu-link">
+                                <div data-i18n="Without menu">Jadwal Kegiatan</div>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+
+                <li
+                    class="{{ Request::segment(1) == 'fasilitas-poli' ||
+                    Request::segment(1) == 'fasilitas-igd' ||
+                    Request::segment(1) == 'fasilitas-inap' ||
+                    Request::segment(1) == 'fasilitas-penunjang'
+                        ? 'menu-item active open'
+                        : 'menu-item' }}">
+                    <a href="javascript:void(0);" class="menu-link menu-toggle">
+                        <i class="menu-icon tf-icons bx bx-detail"></i>
+                        <div data-i18n="Analytics">Fasilitas</div>
+                    </a>
+
+                    <ul class="menu-sub">
+                        <li class="{{ Request::segment(1) == 'fasilitas-poli' ? 'menu-item active' : 'menu-item' }}">
+                            <a href="/fasilitas-poli" class="menu-link">
+                                <div data-i18n="Without menu">Poli</div>
+                            </a>
+                        </li>
+                    </ul>
+
+                    <ul class="menu-sub">
+                        <li class="{{ Request::segment(1) == 'fasilitas-igd' ? 'menu-item active' : 'menu-item' }}">
+                            <a href="/fasilitas-igd" class="menu-link">
+                                <div data-i18n="Without menu">IGD</div>
+                            </a>
+                        </li>
+                    </ul>
+
+                    <ul class="menu-sub">
+                        <li class="{{ Request::segment(1) == 'fasilitas-inap' ? 'menu-item active' : 'menu-item' }}">
+                            <a href="/fasilitas-inap" class="menu-link">
+                                <div data-i18n="Without menu">Kamar Rawat Inap</div>
+                            </a>
+                        </li>
+                    </ul>
+
+                    <ul class="menu-sub">
+                        <li class="{{ Request::segment(1) == 'fasilitas-penunjang' ? 'menu-item active' : 'menu-item' }}">
+                            <a href="/fasilitas-penunjang" class="menu-link">
+                                <div data-i18n="Without menu">Penunjang Medis</div>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
             </ul>
         </aside>
         <!-- / Menu -->

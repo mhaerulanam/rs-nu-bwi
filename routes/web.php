@@ -40,6 +40,14 @@ Route::group(['namespace' => 'App\Http\Controllers\Backend'], function () {
     Route::resource('/alur-inap', 'AlurInapController');
     Route::resource('/alur-jalan', 'AlurJalanController');
     Route::resource('/alur-igd', 'AlurIGDController');
+    Route::resource('/bpjs', 'BPJSController');
+    Route::resource('/jadwal-kegiatan', 'JadwalController');
+
+    Route::resource('/fasilitas-poli', 'FasilitasPoliController');
+    Route::resource('/fasilitas-igd', 'FasilitasIgdController');
+    Route::resource('/fasilitas-inap', 'FasilitasInapController');
+    Route::resource('/fasilitas-penunjang', 'FasilitasPenunjangController');
+
 });
 
 
