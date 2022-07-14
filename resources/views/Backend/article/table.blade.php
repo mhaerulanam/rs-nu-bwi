@@ -16,7 +16,7 @@
             <tr>
                 <td scope="row">{{ $loop->iteration }}</td>
                 <td>{{ $data->title }}</td>
-                <td>{{ Str::limit($data->description  , 100, $end=" ...")}}</td>
+                <td>{!! Str::limit($data->description  , 100, $end=" ...")!!}</td>
                 <td>{{ $data->name_category }}</td>
                 <td>
                     @if ($data->image != null || $data->image != '')

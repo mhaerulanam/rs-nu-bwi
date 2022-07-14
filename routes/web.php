@@ -14,40 +14,65 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+// URI Route Public
+Route::group(['namespace' => 'App\Http\Controllers\Auth'], function () {
+    Route::get('/admin', 'AuthenticatedSessionController@index');
+});
 
 // URI Route Frontend
 Route::group(['namespace' => 'App\Http\Controllers\Frontend'], function () {
     Route::get('/', 'BerandaController@index');
     Route::get('/beranda', 'BerandaController@index');
     Route::get('/user/sejarah', 'SejarahController@index');
+    Route::get('/user/visimisi', 'VisiMisiController@index');
 });
 
 // URI Route Backend
-Route::group(['namespace' => 'App\Http\Controllers\Backend'], function () {
-    Route::resource('/dashboard', 'BannerController');
-    Route::resource('/banner', 'BannerController');
-    Route::resource('/fasilitas', 'FasilitasController');
-    Route::resource('/article', 'ArticleController');
-    Route::resource('/category-article', 'CategoryArticleController');
+Route::group(['middleware' => 'auth'], function () {
+    // Route::auth();
+    Route::group(['namespace' => 'App\Http\Controllers\Backend'], function () {
+        Route::resource('/dashboard', 'BannerController');
+        Route::resource('/banner', 'BannerController');
+        Route::resource('/fasilitas', 'FasilitasController');
+        Route::resource('/article', 'ArticleController');
+        Route::resource('/category-article', 'CategoryArticleController');
 
-    Route::resource('/sejarah', 'SejarahController');
-    Route::resource('/visimisi', 'VisiMisiTujuanController');
-    Route::resource('/struktur', 'StrukturController');
-    Route::resource('/staf', 'StafController');
+        Route::resource('/sejarah', 'SejarahController');
+        Route::resource('/visimisi', 'VisiMisiTujuanController');
+        Route::resource('/struktur', 'StrukturController');
+        Route::resource('/staf', 'StafController');
 
-    Route::resource('/dokter', 'DokterController');
-    Route::resource('/jabatan-dokter', 'JabatanDokterController');
-    Route::resource('/alur-inap', 'AlurInapController');
-    Route::resource('/alur-jalan', 'AlurJalanController');
-    Route::resource('/alur-igd', 'AlurIGDController');
-    Route::resource('/bpjs', 'BPJSController');
-    Route::resource('/jadwal-kegiatan', 'JadwalController');
+        Route::resource('/dokter', 'DokterController');
+        Route::resource('/jabatan-dokter', 'JabatanDokterController');
+        Route::resource('/alur-inap', 'AlurInapController');
+        Route::resource('/alur-jalan', 'AlurJalanController');
+        Route::resource('/alur-igd', 'AlurIGDController');
+        Route::resource('/bpjs', 'BPJSController');
+        Route::resource('/jadwal-kegiatan', 'JadwalController');
 
-    Route::resource('/fasilitas-poli', 'FasilitasPoliController');
-    Route::resource('/fasilitas-igd', 'FasilitasIgdController');
-    Route::resource('/fasilitas-inap', 'FasilitasInapController');
-    Route::resource('/fasilitas-penunjang', 'FasilitasPenunjangController');
+        Route::resource('/fasilitas-poli', 'FasilitasPoliController');
+        Route::resource('/fasilitas-igd', 'FasilitasIgdController');
+        Route::resource('/fasilitas-inap', 'FasilitasInapController');
+        Route::resource('/fasilitas-penunjang', 'FasilitasPenunjangController');
 
+        Route::resource('/konsultasi-admin', 'KonsultasiAdminController');
+        Route::get('/konsultasi-admin/{id}/detail', 'KonsultasiAdminController@detail')->name('detail-konsultasi-admin');
+
+        Route::resource('/homecare-admin', 'HomecareAdminController');
+
+        Route::resource('/master-pasien', 'MasterPasienController');
+        Route::resource('/master-diagnosa', 'MasterDiagnosaController');
+        Route::resource('/master-layanan', 'MasterLayananController');
+    });
 });
 
 
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+
+// Route::get('/dashboard', function () {
+//     return view('dashboard');
+// })->middleware(['auth'])->name('dashboard');
+
+require __DIR__ . '/auth.php';

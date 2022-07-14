@@ -1,5 +1,6 @@
 <meta charset="utf-8">
-<title>Medic | Medical HTML Template</title>
+<link rel="icon" href="{{ asset('assets/logo/logo-rs-nu-bwi.png') }}" type="image/x-icon">
+<title>RSNU Banyuwangi</title>
 
 
 <!-- mobile responsive meta -->

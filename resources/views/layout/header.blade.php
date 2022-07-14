@@ -1,11 +1,10 @@
-
 <!--Header Upper-->
 <section class="header-uper">
     <div class="container clearfix">
         <div class="logo">
             <figure>
                 <a href="index.html">
-                    <img src="{{ asset('assets/logo/logo-rs-nu-bwi.png') }}" width="100" style="margin: 16px"
+                    <img src="{{ asset('assets/logo/logo-rs-nu-bwi.png') }}" width="50" style="margin: 16px"
                         alt="">
                 </a>
             </figure>
@@ -31,32 +30,29 @@
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
-                {{--  <li class="dropdown">
+                {{-- <li class="dropdown">
                     <a href="#" class="dropbtn">Profil Rumah Sakit</a>
                     <ul class="dropdown-content">
                         <a href="#">Anggota</a>
                         <a href="#">Buku</a>
                         <a href="#">Kategori Buku</a>
                     </ul>
-                </li>  --}}
+                </li> --}}
                 <li class="{{ Request::segment(1) == '' || Request::segment(1) == 'beranda' ? 'active' : '' }}">
                     <a href="/beranda">Beranda</a>
                 </li>
                 <li class="dropdown {{ Request::segment(2) == 'sejarah' ? 'active' : '' }}">
-                    <a href="#" class="dropdown-toggle"
-                        data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Profile RS <span
-                            class="caret"></span></a>
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                        aria-expanded="false">Profile RS <span class="caret"></span></a>
                     <ul class="dropdown-menu">
                         <li><a class="{{ Request::segment(2) == 'sejarah' ? '' : 'light-style' }}"
                                 href="/user/sejarah">Sejarah</a>
                         </li>
                         <li role="separator" class="divider"></li>
-                        <li><a class="light-style"
-                                href="">Visi, Misi & Strategi</a>
+                        <li><a class="light-style" href="">Visi, Misi & Strategi</a>
                         </li>
                         <li role="separator" class="divider"></li>
-                        <li><a class="light-style"
-                            href="">Struktur Organisasi</a></li>
+                        <li><a class="light-style" href="">Struktur Organisasi</a></li>
                     </ul>
                 </li>
                 <li>
@@ -71,7 +67,7 @@
                 <li>
                     <a href="#">Homecare</a>
                 </li>
-                <!-- <li class="dropdown">
+                {{-- <!-- <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown
                                     <span class="caret"></span>
                             </a>
@@ -94,8 +90,34 @@
                                         <a href="#">One more separated link</a>
                                     </li>
                             </ul>
-                        </li> -->
+                        </li> --> --}}
             </ul>
+            @if (Auth::user() && Auth::user()->role == 2)
+                <ul class="nav navbar-nav" style="float:right">
+                    <li class="dropdown {{ Request::segment(2) == 'sejarah' ? 'active' : '' }} float-right">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
+                            aria-haspopup="true" aria-expanded="false">
+                            <img src="/upload/admin/default.png" alt class="w-px-40 h-auto rounded-circle"
+                                width="30" style="position: relative; margin-right:10px" />
+                            Anam
+                            <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <!-- Authentication -->
+                                <form method="POST" action="{{ route('logout') }}">
+                                    @csrf
+
+                                    <x-responsive-nav-link :href="route('logout')"
+                                        onclick="event.preventDefault();
+                                                    this.closest('form').submit();">
+                                        {{ __('Log Out') }}
+                                    </x-responsive-nav-link>
+                                </form>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            @endif
         </div>
         <!-- /.navbar-collapse -->
     </div>

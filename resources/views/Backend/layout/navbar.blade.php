@@ -212,12 +212,13 @@
                         ? 'menu-item active open'
                         : 'menu-item' }}">
                     <a href="javascript:void(0);" class="menu-link menu-toggle">
-                        <i class="menu-icon tf-icons bx bx-detail"></i>
+                        <i class="menu-icon tf-icons bx bx-box"></i>
                         <div data-i18n="Analytics">Fasilitas</div>
                     </a>
 
                     <ul class="menu-sub">
-                        <li class="{{ Request::segment(1) == 'fasilitas-poli' ? 'menu-item active' : 'menu-item' }}">
+                        <li
+                            class="{{ Request::segment(1) == 'fasilitas-poli' ? 'menu-item active' : 'menu-item' }}">
                             <a href="/fasilitas-poli" class="menu-link">
                                 <div data-i18n="Without menu">Poli</div>
                             </a>
@@ -233,7 +234,8 @@
                     </ul>
 
                     <ul class="menu-sub">
-                        <li class="{{ Request::segment(1) == 'fasilitas-inap' ? 'menu-item active' : 'menu-item' }}">
+                        <li
+                            class="{{ Request::segment(1) == 'fasilitas-inap' ? 'menu-item active' : 'menu-item' }}">
                             <a href="/fasilitas-inap" class="menu-link">
                                 <div data-i18n="Without menu">Kamar Rawat Inap</div>
                             </a>
@@ -241,9 +243,62 @@
                     </ul>
 
                     <ul class="menu-sub">
-                        <li class="{{ Request::segment(1) == 'fasilitas-penunjang' ? 'menu-item active' : 'menu-item' }}">
+                        <li
+                            class="{{ Request::segment(1) == 'fasilitas-penunjang' ? 'menu-item active' : 'menu-item' }}">
                             <a href="/fasilitas-penunjang" class="menu-link">
                                 <div data-i18n="Without menu">Penunjang Medis</div>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+
+                <li class="{{ Request::segment(1) == 'konsultasi-admin' ? 'menu-item active' : 'menu-item' }}">
+                    <a href="/konsultasi-admin" class="menu-link">
+                        <i class="menu-icon tf-icons bx bx-chat"></i>
+                        <div data-i18n="Analytics">Konsultasi</div>
+                    </a>
+                </li>
+
+                <li class="{{ Request::segment(1) == 'homecare-admin' ? 'menu-item active' : 'menu-item' }}">
+                    <a href="/homecare-admin" class="menu-link">
+                        <i class="menu-icon tf-icons bx bx-support"></i>
+                        <div data-i18n="Analytics">Homecare</div>
+                    </a>
+                </li>
+
+                <li
+                    class="{{ Request::segment(1) == 'master-pasien' ||
+                    Request::segment(1) == 'master-diagnosa' ||
+                    Request::segment(1) == 'master-layanan'
+                        ? 'menu-item active open'
+                        : 'menu-item' }}">
+                    <a href="javascript:void(0);" class="menu-link menu-toggle">
+                        <i class="menu-icon tf-icons bx bx-collection"></i>
+                        <div data-i18n="Analytics">Master</div>
+                    </a>
+
+                    <ul class="menu-sub">
+                        <li class="{{ Request::segment(1) == 'master-pasien' ? 'menu-item active' : 'menu-item' }}">
+                            <a href="/master-pasien" class="menu-link">
+                                <div data-i18n="Without menu">Master Pasien</div>
+                            </a>
+                        </li>
+                    </ul>
+
+                    <ul class="menu-sub">
+                        <li
+                            class="{{ Request::segment(1) == 'master-diagnosa' ? 'menu-item active' : 'menu-item' }}">
+                            <a href="/master-diagnosa" class="menu-link">
+                                <div data-i18n="Without menu">Master Diagnosa</div>
+                            </a>
+                        </li>
+                    </ul>
+
+                    <ul class="menu-sub">
+                        <li
+                            class="{{ Request::segment(1) == 'master-layanan' ? 'menu-item active' : 'menu-item' }}">
+                            <a href="/master-layanan" class="menu-link">
+                                <div data-i18n="Without menu">Master Layanan</div>
                             </a>
                         </li>
                     </ul>
@@ -262,7 +317,15 @@
                         <i class="bx bx-menu bx-sm"></i>
                     </a>
                 </div>
+
                 <div class="navbar-nav-right d-flex align-items-center" id="navbar-collapse">
+                    <div class="navbar-nav align-items-center">
+                        <div class="nav-item d-flex align-items-center">
+                            <h4>
+                                Rumah Sakit Nahdlatul Ulama Banyuwangi
+                            </h4>
+                        </div>
+                    </div>
 
                     <ul class="navbar-nav flex-row align-items-center ms-auto">
                         <!-- User -->
@@ -270,8 +333,7 @@
                             <a class="nav-link dropdown-toggle hide-arrow" href="javascript:void(0);"
                                 data-bs-toggle="dropdown">
                                 <div class="avatar avatar-online">
-                                    <img src="../assets/img/avatars/1.png" alt
-                                        class="w-px-40 h-auto rounded-circle" />
+                                    <img src="/upload/admin/default.png" alt class="w-px-40 h-auto rounded-circle" />
                                 </div>
                             </a>
                             <ul class="dropdown-menu dropdown-menu-end">
@@ -280,13 +342,13 @@
                                         <div class="d-flex">
                                             <div class="flex-shrink-0 me-3">
                                                 <div class="avatar avatar-online">
-                                                    <img src="../assets/img/avatars/1.png" alt
+                                                    <img src="/upload/admin/default.png" alt
                                                         class="w-px-40 h-auto rounded-circle" />
                                                 </div>
                                             </div>
                                             <div class="flex-grow-1">
-                                                <span class="fw-semibold d-block">John Doe</span>
-                                                <small class="text-muted">Admin</small>
+                                                <span class="fw-semibold d-block">{{ Auth::user()->name }}</span>
+                                                <small class="text-muted">{{ Auth::user()->email }}</small>
                                             </div>
                                         </div>
                                     </a>
@@ -295,35 +357,16 @@
                                     <div class="dropdown-divider"></div>
                                 </li>
                                 <li>
-                                    <a class="dropdown-item" href="#">
-                                        <i class="bx bx-user me-2"></i>
-                                        <span class="align-middle">My Profile</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a class="dropdown-item" href="#">
-                                        <i class="bx bx-cog me-2"></i>
-                                        <span class="align-middle">Settings</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a class="dropdown-item" href="#">
-                                        <span class="d-flex align-items-center align-middle">
-                                            <i class="flex-shrink-0 bx bx-credit-card me-2"></i>
-                                            <span class="flex-grow-1 align-middle">Billing</span>
-                                            <span
-                                                class="flex-shrink-0 badge badge-center rounded-pill bg-danger w-px-20 h-px-20">4</span>
-                                        </span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <div class="dropdown-divider"></div>
-                                </li>
-                                <li>
-                                    <a class="dropdown-item" href="auth-login-basic.html">
-                                        <i class="bx bx-power-off me-2"></i>
-                                        <span class="align-middle">Log Out</span>
-                                    </a>
+                                    <!-- Authentication -->
+                                    <form method="POST" action="{{ route('logout') }}">
+                                        @csrf
+
+                                        <x-responsive-nav-link :href="route('logout')"
+                                            onclick="event.preventDefault();
+                                                            this.closest('form').submit();">
+                                            {{ __('Log Out') }}
+                                        </x-responsive-nav-link>
+                                    </form>
                                 </li>
                             </ul>
                         </li>

@@ -18,7 +18,7 @@
         @yield('content')
 
         <!--footer-main-->
-            @include('layout.footer')
+        @include('layout.footer')
         <!--End footer-main-->
 
     </div>
@@ -30,8 +30,8 @@
         <span class="icon fa fa-angle-up"></span>
     </div>
 
-       {{-- URI Header css --}}
-       @include('layout.source.foot')
+    {{-- URI Header css --}}
+    @include('layout.source.foot')
 </body>
 
 </html>

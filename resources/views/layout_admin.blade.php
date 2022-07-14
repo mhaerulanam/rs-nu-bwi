@@ -1,3 +1,9 @@
+@if(Auth::user()->role != 1)
+    @php
+        header("Location: " . URL::to('/'), true, 302);
+        exit();
+    @endphp
+@endif
 <!DOCTYPE html>
 <html lang="en" class="light-style layout-menu-fixed" dir="ltr" data-theme="theme-default"
     data-assets-path="../assets/" data-template="vertical-menu-template-free">

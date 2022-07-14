@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\HomecareAdmin;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
@@ -28,6 +29,8 @@ class DatabaseSeeder extends Seeder
             AlurIGDSeeder::class,
             BPJSSeeder::class,
             JadwalSeeder::class,
+            KonsultasiAdminSeeder::class,
+            HomecareAdminSeeder::class,
         ]);
     }
 }

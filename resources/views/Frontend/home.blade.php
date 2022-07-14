@@ -1,8 +1,8 @@
 @extends('layout')
 @section('content')
     <!--=================================
-    =            Page Slider            =
-    ==================================-->
+                        =            Page Slider            =
+                        ==================================-->
     <div class="hero-slider">
         @if (!$banners->isEmpty())
             @foreach ($banners as $no => $data)
@@ -12,14 +12,14 @@
                         <div class="row">
                             <div class="col-12">
                                 <!-- Slide Content Start -->
-                                <div class="content style text-center">
+                                {{-- <div class="content style text-center">
                                     <h2 class="text-white text-bold mb-2">Our Best Surgeons</h2>
                                     <p class="tag-text mb-5">Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel
                                         sunt animi
                                         sequi ratione quod at earum. <br>
                                         Quis quos officiis numquam!</p>
-                                    {{-- <a href="#" class="btn btn-main btn-white">explore</a> --}}
-                                </div>
+                                    <a href="#" class="btn btn-main btn-white">explore</a>
+                                </div> --}}
                                 <!-- Slide Content End -->
                             </div>
                         </div>
@@ -60,21 +60,21 @@
             </div>
 
             @if (!$fasilitas->isEmpty())
-                <div class="row items-container clearfix">
+                <div class="row items-container clearfix" style="max-height: 450px">
                     @foreach ($fasilitas as $data)
-                        <div class="item">
-                            <div class="inner-box">
+                        <div class="item" style="max-height: 450px">
+                            <div class="inner-box"style="max-height: 450px">
                                 <div class="img_holder">
                                     <a href="service.html">
                                         <img src="upload/fasilitas/{{ $data->image }}" style="height: 200px"
                                             alt="images" class="img-responsive">
                                     </a>
                                 </div>
-                                <div class="image-content text-center">
+                                <div class="image-content text-center" style="max-height: 220px">
                                     <a href="service.html">
                                         <h6>{{ $data->name }}</h6>
                                     </a>
-                                    <p>{{ Str::limit($data->description, 200, $end = ' ...') }}</p>
+                                    <p>{{ Str::limit($data->description, 180, $end = ' ...') }}</p>
                                 </div>
                             </div>
                         </div>
@@ -93,7 +93,7 @@
                     <span>Kesehatan</span>
                 </h3>
             </div>
-            <div class="row">
+            <div class="row d-flex justify-content-center">
                 @if (!$articles->isEmpty())
                     @foreach ($articles as $data)
                         <div class="col-md-4 col-sm-6 col-xs-12">
@@ -102,11 +102,44 @@
                                     class="img-responsive">
                                 <div class="contents text-center" style="margin-height: 20px">
                                     <h4>{{ $data->title }}</h4>
-                                    <p>{{ Str::limit($data->description, 200, $end = ' ...') }}</p>
+                                    <div style="margin: 16px">
+                                        <p>{!! strip_tags(Str::limit($data->description, 300, $end = ' ...')) !!}</p>
+                                    </div>
                                     <a href="#" class="btn btn-main">read more</a>
                                 </div>
                             </div>
                         </div>
+                        {{-- @if (count($articles) <= 2)
+                            <center>
+                                <div class="col-md-4 col-sm-6 col-xs-12">
+                                    <div class="team-member">
+                                        <img src="upload/articles/{{ $data->image }}" alt="doctor" style="height: 200px"
+                                            class="img-responsive">
+                                        <div class="contents text-center" style="margin-height: 20px">
+                                            <h4>{{ $data->title }}</h4>
+                                            <div style="margin: 16px">
+                                                <p>{!! strip_tags(Str::limit($data->description, 300, $end = ' ...')) !!}</p>
+                                            </div>
+                                            <a href="#" class="btn btn-main">read more</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </center>
+                        @else
+                            <div class="col-md-4 col-sm-6 col-xs-12">
+                                <div class="team-member">
+                                    <img src="upload/articles/{{ $data->image }}" alt="doctor" style="height: 200px"
+                                        class="img-responsive">
+                                    <div class="contents text-center" style="margin-height: 20px">
+                                        <h4>{{ $data->title }}</h4>
+                                        <div style="margin: 16px">
+                                            <p>{!! strip_tags(Str::limit($data->description, 300, $end = ' ...')) !!}</p>
+                                        </div>
+                                        <a href="#" class="btn btn-main">read more</a>
+                                    </div>
+                                </div>
+                            </div>
+                        @endif --}}
                     @endforeach
                 @endif
             </div>
