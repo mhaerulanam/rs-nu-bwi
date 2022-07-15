@@ -4,10 +4,10 @@ namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
 use App\Models\Banner;
-use App\Models\VisiMisiTujuan;
+use App\Models\Struktur;
 use Illuminate\Http\Request;
 
-class VisiMisiController extends Controller
+class StrukturOrganisasiController extends Controller
 {
     public function index()
     {
@@ -15,7 +15,7 @@ class VisiMisiController extends Controller
             ->where('status', true)
             ->orderByDesc('id')
             ->get();
-        $data['visimisi'] = VisiMisiTujuan::all();
-        return view('frontend.visimisi', $data);
+        $data['strukturs'] = Struktur::all();
+        return view('frontend.strukturs', $data);
     }
 }

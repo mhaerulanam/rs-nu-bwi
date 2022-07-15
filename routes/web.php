@@ -25,6 +25,13 @@ Route::group(['namespace' => 'App\Http\Controllers\Frontend'], function () {
     Route::get('/beranda', 'BerandaController@index');
     Route::get('/user/sejarah', 'SejarahController@index');
     Route::get('/user/visimisi', 'VisiMisiController@index');
+    Route::get('/user/struktur-organisasi', 'StrukturOrganisasiController@index');
+    Route::get('/user/dokter', 'DokterController@index');
+    Route::get('/user/alur-inap', 'AlurInapController@index');
+    Route::get('/user/alur-jalan', 'AlurJalanController@index');
+    Route::get('/user/alur-igd', 'AlurIgdController@index');
+    Route::get('/user/bpjs', 'BpjsController@index');
+    Route::get('/user/jadwal-kegiatan', 'JadwalKegiatanController@index');
 });
 
 // URI Route Backend

@@ -41,7 +41,14 @@
                 <li class="{{ Request::segment(1) == '' || Request::segment(1) == 'beranda' ? 'active' : '' }}">
                     <a href="/beranda">Beranda</a>
                 </li>
-                <li class="dropdown {{ Request::segment(2) == 'sejarah' ? 'active' : '' }}">
+                <li
+                    class="dropdown {{ ((Request::segment(2) == 'sejarah'
+                                ? 'active'
+                                : '' || Request::segment(2) == 'visimisi')
+                            ? 'active'
+                            : '' || Request::segment(2) == 'struktur-organisasi')
+                        ? 'active'
+                        : '' }}">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
                         aria-expanded="false">Profile RS <span class="caret"></span></a>
                     <ul class="dropdown-menu">
@@ -49,14 +56,55 @@
                                 href="/user/sejarah">Sejarah</a>
                         </li>
                         <li role="separator" class="divider"></li>
-                        <li><a class="light-style" href="">Visi, Misi & Strategi</a>
+                        <li><a class="{{ Request::segment(2) == 'visimisi' ? '' : 'light-style' }}"
+                                href="/user/visimisi">Visi, Misi & Strategi</a>
                         </li>
                         <li role="separator" class="divider"></li>
-                        <li><a class="light-style" href="">Struktur Organisasi</a></li>
+                        <li><a class="{{ Request::segment(2) == '/user/struktur-organisasi' ? '' : 'light-style' }}"
+                                href="/user/struktur-organisasi">Struktur Organisasi</a></li>
                     </ul>
                 </li>
-                <li>
-                    <a href="#">Informasi</a>
+                <li
+                    class="dropdown {{ (((((Request::segment(2) == 'dokter'
+                                            ? 'active'
+                                            : '' || Request::segment(2) == 'alur-inap')
+                                        ? 'active'
+                                        : '' || Request::segment(2) == 'alur-jalan')
+                                    ? 'active'
+                                    : '' || Request::segment(2) == 'alur-igd')
+                                ? 'active'
+                                : '' || Request::segment(2) == 'bpjs')
+                            ? 'active'
+                            : '' || Request::segment(2) == 'jadwal-kegiatan')
+                        ? 'active'
+                        : '' }}">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                        aria-expanded="false">Informasi <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a class="{{ Request::segment(2) == 'dokter' ? '' : 'light-style' }}"
+                                href="/user/dokter">Dokter & Jadwal</a>
+                        </li>
+                        <li role="separator" class="divider"></li>
+                        <li><a class="{{ Request::segment(2) == 'alur-inap' ? '' : 'light-style' }}"
+                                href="/user/alur-inap">Alur Pasien Rawat Inap</a>
+                        </li>
+                        <li role="separator" class="divider"></li>
+                        <li><a class="{{ Request::segment(2) == 'alur-jalan' ? '' : 'light-style' }}"
+                                href="/user/alur-jalan">Alur Pasien Rawat Jalan</a>
+                        </li>
+                        <li role="separator" class="divider"></li>
+                        <li><a class="{{ Request::segment(2) == 'alur-igd' ? '' : 'light-style' }}"
+                                href="/user/alur-igd">Alur Pasien IGD</a>
+                        </li>
+                        <li role="separator" class="divider"></li>
+                        <li><a class="{{ Request::segment(2) == 'bpjs' ? '' : 'light-style' }}"
+                                href="/user/bpjs">BPJS Kesehatan</a>
+                        </li>
+                        <li role="separator" class="divider"></li>
+                        <li><a class="{{ Request::segment(2) == 'jadwal-kegiatan' ? '' : 'light-style' }}"
+                                href="/user/jadwal-kegiatan">Jadwal Kegiatan</a>
+                        </li>
+                    </ul>
                 </li>
                 <li>
                     <a href="#">Fasilitas</a>
@@ -67,30 +115,9 @@
                 <li>
                     <a href="#">Homecare</a>
                 </li>
-                {{-- <!-- <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown
-                                    <span class="caret"></span>
-                            </a>
-                            <ul class="dropdown-menu">
-                                    <li>
-                                        <a href="#">Action</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">Another action</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">Something else here</a>
-                                    </li>
-                                    <li role="separator" class="divider"></li>
-                                    <li>
-                                        <a href="#">Separated link</a>
-                                    </li>
-                                    <li role="separator" class="divider"></li>
-                                    <li>
-                                        <a href="#">One more separated link</a>
-                                    </li>
-                            </ul>
-                        </li> --> --}}
+                <li>
+                    <a href="#">Galeri</a>
+                </li>
             </ul>
             @if (Auth::user() && Auth::user()->role == 2)
                 <ul class="nav navbar-nav" style="float:right">
@@ -99,7 +126,7 @@
                             aria-haspopup="true" aria-expanded="false">
                             <img src="/upload/admin/default.png" alt class="w-px-40 h-auto rounded-circle"
                                 width="30" style="position: relative; margin-right:10px" />
-                            Anam
+                            Auth::user()->name
                             <span class="caret"></span></a>
                         <ul class="dropdown-menu">
                             <li>

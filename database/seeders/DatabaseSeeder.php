@@ -26,6 +26,7 @@ class DatabaseSeeder extends Seeder
             VisiMisiSeeder::class,
             StrukturSeeder::class,
             AlurInapSeeder::class,
+            AlurJalanSeeder::class,
             AlurIGDSeeder::class,
             BPJSSeeder::class,
             JadwalSeeder::class,
