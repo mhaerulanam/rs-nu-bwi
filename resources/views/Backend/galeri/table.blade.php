@@ -2,26 +2,26 @@
     <thead>
         <tr>
             <th>No</th>
+            <th>Image</th>
             <th>Judul</th>
             <th>Deskripsi</th>
-            <th>Image</th>
             <th>Status</th>
             <th>Aksi</th>
         </tr>
     </thead>
     <tbody>
-        @forelse ($fasilitasInap as $data)
+        @forelse ($galeris as $data)
             <tr>
                 <td scope="row">{{ $loop->iteration }}</td>
-                <td>{{ $data->title }}</td>
-                <td>{!! Str::limit($data->description  , 100, $end=" ...") !!}</td>
                 <td>
                     @if ($data['image'] != null || $data['image'] != '')
-                        <img src="/upload/fas-inap/{{ $data->image }}" width="100">
+                        <img src="/upload/galeri/{{ $data->image }}" width="100">
                     @else
                         <span style="color: red">Tidak ada gambar</span>
                     @endif
                 </td>
+                <td>{{ $data->title }}</td>
+                <td>{!! Str::limit($data->description  , 100, $end=" ...") !!}</td>
                 <td>
                     @if ($data->status == true)
                         <div class="badge badge-success">Aktif</div>
@@ -31,8 +31,8 @@
                 </td>
                 <td class="text-center">
                     <form onsubmit="return confirm('Apakah Anda Yakin ?');"
-                        action="{{ route('fasilitas-inap.destroy', $data->id) }}" method="POST">
-                        <a href="{{ route('fasilitas-inap.edit', $data->id) }}"
+                        action="{{ route('galeri.destroy', $data->id) }}" method="POST">
+                        <a href="{{ route('galeri.edit', $data->id) }}"
                             class="btn btn-warning">EDIT</a>
                         @csrf
                         @method('DELETE')
@@ -42,7 +42,7 @@
             </tr>
         @empty
             <tr>
-                <td class="text-center text-mute" colspan="4">Data post tidak tersedia</td>
+                <td class="text-center text-mute" colspan="4">Data galeri tidak tersedia</td>
             </tr>
         @endforelse
     </tbody>

@@ -32,6 +32,16 @@ Route::group(['namespace' => 'App\Http\Controllers\Frontend'], function () {
     Route::get('/user/alur-igd', 'AlurIgdController@index');
     Route::get('/user/bpjs', 'BpjsController@index');
     Route::get('/user/jadwal-kegiatan', 'JadwalKegiatanController@index');
+
+    Route::get('/user/fasilitas-poli', 'FasilitasPoliController@index');
+    Route::get('/user/fasilitas-igd', 'FasilitasIgdController@index');
+    Route::get('/user/fasilitas-inap', 'FasilitasInapController@index');
+    Route::get('/user/fasilitas-penunjang', 'FasilitasPenunjangController@index');
+
+    Route::get('/user/galeri', 'GaleriController@index');
+    Route::get('/user/berita', 'BeritaController@index')->name('search-article');
+    Route::get('/user/detail/berita/{id}', 'BeritaController@show')->name('show-article');
+    Route::get('/user/berita/{kategori}', 'BeritaController@kategori')->name('kategori-article');
 });
 
 // URI Route Backend
@@ -70,6 +80,8 @@ Route::group(['middleware' => 'auth'], function () {
         Route::resource('/master-pasien', 'MasterPasienController');
         Route::resource('/master-diagnosa', 'MasterDiagnosaController');
         Route::resource('/master-layanan', 'MasterLayananController');
+
+        Route::resource('/galeri', 'GaleriController');
     });
 });
 

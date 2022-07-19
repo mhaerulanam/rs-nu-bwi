@@ -24,14 +24,14 @@
             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
         </div>
     @endif
-    <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Dashboard/</span> Fasilitas Inap </h4>
+    <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Dashboard/</span> Galeri </h4>
     <!-- Basic Layout & Basic with Icons -->
     <div class="row">
         <!-- Basic Layout -->
         <div class="col-xxl">
             <div class="card mb-4">
                 <div class="card-body">
-                    <form action="{{ route('fasilitas-inap.update', $fasilitasInap->id) }}" method="POST"
+                    <form action="{{ route('galeri.update', $galeris->id) }}" method="POST"
                         enctype="multipart/form-data">
                         @csrf
                         @method('PUT')
@@ -39,16 +39,16 @@
                         <div class="modal-body">
                             <div class="row">
                                 <div class="col mb-3">
-                                    <label for="nameExLarge" class="form-label">Nama Fasilitas Inap</label>
+                                    <label for="nameExLarge" class="form-label">Nama Foto</label>
                                     <input type="text" id="nameExLarge" class="form-control" name="title"
-                                        placeholder="Masukkan Nama fasilitasPoli"
-                                        value="{{ isset($fasilitasInap->title) ? $fasilitasInap->title : '' }}" />
+                                        placeholder="Masukkan Nama Foto"
+                                        value="{{ isset($galeris->title) ? $galeris->title : '' }}" />
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col mb-3">
-                                    <label for="deskripsi" class="form-label">Deskripsi Fasilitas Poli</label>
-                                    <textarea id="konten" name="description" rows="4" class="form-control" cols="50">{{ isset($fasilitasInap->description) ? $fasilitasInap->description : '' }}
+                                    <label for="deskripsi" class="form-label">Deskripsi Foto</label>
+                                    <textarea id="" name="description" rows="4" class="form-control" cols="50">{{ isset($galeris->description) ? $galeris->description : '' }}
                                     </textarea>
                                 </div>
                             </div>
@@ -62,16 +62,16 @@
                                         <input type="hidden" name="status" value="0">
                                         <input type="checkbox" value="1" class="form-check-input" id="scales"
                                             name="status"
-                                            {{ isset($fasilitasInap->status) && $fasilitasInap->status == true ? 'checked' : '' }}>
+                                            {{ isset($galeris->status) && $galeris->status == true ? 'checked' : '' }}>
                                         <label class="form-check-label" for="defaultCheck1"> Status </label>
                                     </div>
                                 </div>
                             </div>
                             <div class="row g-2" style="margin-top: 16px">
                                 <div class="col mb-0">
-                                    @if (isset($fasilitasInap->image))
+                                    @if (isset($galeris->image))
                                         <img width="200px" id="blah"
-                                            src="{{ '/upload/fas-inap/' . $fasilitasInap->image }}" alt="your image" />
+                                            src="{{ '/upload/galeri/' . $galeris->image }}" alt="your image" />
                                     @else
                                         <span style="color: red">Tidak ada gambar</span>
                                     @endif

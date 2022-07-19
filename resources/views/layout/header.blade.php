@@ -4,16 +4,36 @@
         <div class="logo">
             <figure>
                 <a href="index.html">
-                    <img src="{{ asset('assets/logo/logo-rs-nu-bwi.png') }}" width="50" style="margin: 16px"
-                        alt="">
+                    <img src="{{ asset('assets/logo/logo-rs-nu-bwi.png') }}" width="60"
+                        style="margin: 16px 16px 0px 16px" alt="">
                 </a>
             </figure>
+        </div>
+        <div class="right-side">
+            <ul class="contact-info" style="margin: 16px">
+                <li class="item">
+                    <div class="icon-box">
+                        <i class="fa fa-envelope-o"></i>
+                    </div>
+                    <strong>Email</strong>
+                    <br />
+                    <a href="#">
+                        <span>info@medic.com</span>
+                    </a>
+                </li>
+                <li class="item">
+                    <div class="icon-box">
+                        <i class="fa fa-phone"></i>
+                    </div>
+                    <strong>Call Now</strong>
+                    <br />
+                    <span>+ (88017) - 123 - 4567</span>
+                </li>
+            </ul>
         </div>
     </div>
 </section>
 <!--Header Upper-->
-
-
 <!--Main Header-->
 <nav class="navbar navbar-default">
     <div class="container">
@@ -30,14 +50,6 @@
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
-                {{-- <li class="dropdown">
-                    <a href="#" class="dropbtn">Profil Rumah Sakit</a>
-                    <ul class="dropdown-content">
-                        <a href="#">Anggota</a>
-                        <a href="#">Buku</a>
-                        <a href="#">Kategori Buku</a>
-                    </ul>
-                </li> --}}
                 <li class="{{ Request::segment(1) == '' || Request::segment(1) == 'beranda' ? 'active' : '' }}">
                     <a href="/beranda">Beranda</a>
                 </li>
@@ -106,8 +118,35 @@
                         </li>
                     </ul>
                 </li>
-                <li>
-                    <a href="#">Fasilitas</a>
+                <li
+                    class="dropdown {{ (((Request::segment(2) == 'fasilitas-poli'
+                                    ? 'active'
+                                    : '' || Request::segment(2) == 'fasilitas-igd')
+                                ? 'active'
+                                : '' || Request::segment(2) == 'fasilitas-inap')
+                            ? 'active'
+                            : '' || Request::segment(2) == 'fasilitas-penunjang')
+                        ? 'active'
+                        : '' }}">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                        aria-expanded="false">Fasilitas <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a class="{{ Request::segment(2) == 'fasilitas-poli' ? '' : 'light-style' }}"
+                                href="/user/fasilitas-poli">Daftar Poli</a>
+                        </li>
+                        <li role="separator" class="divider"></li>
+                        <li><a class="{{ Request::segment(2) == 'fasilitas-igd' ? '' : 'light-style' }}"
+                                href="/user/fasilitas-igd">Daftar IGD</a>
+                        </li>
+                        <li role="separator" class="divider"></li>
+                        <li><a class="{{ Request::segment(2) == 'fasilitas-inap' ? '' : 'light-style' }}"
+                                href="/user/fasilitas-inap">Daftar Inap</a>
+                        </li>
+                        <li role="separator" class="divider"></li>
+                        <li><a class="{{ Request::segment(2) == 'fasilitas-penunjang' ? '' : 'light-style' }}"
+                                href="/user/fasilitas-penunjang">Daftar Penunjang</a>
+                        </li>
+                    </ul>
                 </li>
                 <li>
                     <a href="#">Konsultasi</a>
@@ -115,8 +154,23 @@
                 <li>
                     <a href="#">Homecare</a>
                 </li>
-                <li>
-                    <a href="#">Galeri</a>
+                <li
+                    class="dropdown {{ (Request::segment(2) == 'fasilitas-poli'
+                            ? 'active'
+                            : '' || Request::segment(2) == 'fasilitas-igd')
+                        ? 'active'
+                        : '' }}">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
+                        aria-haspopup="true" aria-expanded="false">Galeri <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a class="{{ Request::segment(2) == 'galeri' ? '' : 'light-style' }}"
+                                href="/user/galeri">Galeri</a>
+                        </li>
+                        <li role="separator" class="divider"></li>
+                        <li><a class="{{ Request::segment(2) == 'berita' ? '' : 'light-style' }}"
+                                href="/user/berita">Berita Kesehatan</a>
+                        </li>
+                    </ul>
                 </li>
             </ul>
             @if (Auth::user() && Auth::user()->role == 2)
@@ -133,7 +187,6 @@
                                 <!-- Authentication -->
                                 <form method="POST" action="{{ route('logout') }}">
                                     @csrf
-
                                     <x-responsive-nav-link :href="route('logout')"
                                         onclick="event.preventDefault();
                                                     this.closest('form').submit();">

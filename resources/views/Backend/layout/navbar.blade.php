@@ -266,6 +266,13 @@
                     </a>
                 </li>
 
+                <li class="{{ Request::segment(1) == 'galeri' ? 'menu-item active' : 'menu-item' }}">
+                    <a href="/galeri" class="menu-link">
+                        <i class="menu-icon tf-icons bx bx-cube-alt"></i>
+                        <div data-i18n="Analytics">Galeri</div>
+                    </a>
+                </li>
+
                 <li
                     class="{{ Request::segment(1) == 'master-pasien' ||
                     Request::segment(1) == 'master-diagnosa' ||
@@ -303,6 +310,7 @@
                         </li>
                     </ul>
                 </li>
+
             </ul>
         </aside>
         <!-- / Menu -->

@@ -14,7 +14,7 @@
             <tr>
                 <td scope="row">{{ $loop->iteration }}</td>
                 <td>{{ $data->title }}</td>
-                <td>{{ $data->description }}</td>
+                <td>{!! Str::limit($data->description  , 100, $end=" ...") !!}</td>
                 <td>
                     @if ($data['image'] != null || $data['image'] != '')
                         <img src="/upload/fas-penunjang/{{ $data->image }}" width="100">
