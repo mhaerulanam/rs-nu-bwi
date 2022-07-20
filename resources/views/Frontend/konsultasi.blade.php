@@ -95,7 +95,8 @@
         top: 0px;
     }
 
-    input[type="submit"] {
+    #btn-login {
+        widows: 100;
         border: none;
         display: block;
         background-color: #188043;
@@ -112,7 +113,7 @@
         text-align: center;
     }
 
-    input[type="submit"]:hover {
+    #btn-login:hover {
         background-color: #074e25;
         -webkit-transition: all 0.2s ease;
         transition: all 0.2s ease;
@@ -554,7 +555,7 @@
                                         <i class="validation"><span></span><span></span></i>
                                     </p>
                                     <p>
-                                        <button class="btn btn-primary d-grid w-100" id="login"
+                                        <button class="btn btn-primary d-grid w-100" id="btn-login"
                                             type="submit">Login</button>
                                     </p>
                                 </form>

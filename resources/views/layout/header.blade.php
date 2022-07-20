@@ -12,8 +12,8 @@
         <div class="right-side">
             <ul class="contact-info" style="margin: 16px">
                 <li class="item">
-                    <div class="icon-box">
-                        <i class="fa fa-envelope-o"></i>
+                    <div class="icon-box" style="margin: auto; !important">
+                        <i style="margin: auto; !important" class="fa fa-envelope-o"></i>
                     </div>
                     <strong>Email</strong>
                     <br />
@@ -23,7 +23,9 @@
                 </li>
                 <li class="item">
                     <div class="icon-box">
-                        <i class="fa fa-phone"></i>
+                        <span>
+                            <i class="fa fa-phone"></i>
+                        </span>
                     </div>
                     <strong>Call Now</strong>
                     <br />
