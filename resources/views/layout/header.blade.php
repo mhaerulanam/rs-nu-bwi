@@ -149,7 +149,7 @@
                     </ul>
                 </li>
                 <li>
-                    <a href="#">Konsultasi</a>
+                    <a href="/user/konsultasi">Konsultasi</a>
                 </li>
                 <li>
                     <a href="#">Homecare</a>
@@ -180,7 +180,7 @@
                             aria-haspopup="true" aria-expanded="false">
                             <img src="/upload/admin/default.png" alt class="w-px-40 h-auto rounded-circle"
                                 width="30" style="position: relative; margin-right:10px" />
-                            Auth::user()->name
+                            {{Auth::user()->name}}
                             <span class="caret"></span></a>
                         <ul class="dropdown-menu">
                             <li>

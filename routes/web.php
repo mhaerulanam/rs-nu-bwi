@@ -42,6 +42,8 @@ Route::group(['namespace' => 'App\Http\Controllers\Frontend'], function () {
     Route::get('/user/berita', 'BeritaController@index')->name('search-article');
     Route::get('/user/detail/berita/{id}', 'BeritaController@show')->name('show-article');
     Route::get('/user/berita/{kategori}', 'BeritaController@kategori')->name('kategori-article');
+
+    Route::get('/user/konsultasi', 'KonsultasiController@index');
 });
 
 // URI Route Backend
