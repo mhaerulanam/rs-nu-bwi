@@ -32,6 +32,7 @@ class DatabaseSeeder extends Seeder
             JadwalSeeder::class,
             KonsultasiAdminSeeder::class,
             HomecareAdminSeeder::class,
+            UserSeeder::class,
         ]);
     }
 }
