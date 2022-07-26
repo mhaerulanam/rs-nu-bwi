@@ -44,6 +44,12 @@ Route::group(['namespace' => 'App\Http\Controllers\Frontend'], function () {
     Route::get('/user/berita/{kategori}', 'BeritaController@kategori')->name('kategori-article');
 
     Route::get('/user/konsultasi', 'KonsultasiController@index');
+    Route::post('/detail-konsultasi', 'KonsultasiController@show');
+    Route::post('/add-konsultasi', 'KonsultasiController@store')->name('konsultasi-user');
+    Route::post('/update-konsultasi', 'KonsultasiController@update')->name('update-konsultasi-user');
+    Route::get('/user/add-konsultasi', 'KonsultasiController@addKonsultasi');
+
+    Route::get('/user/homecare', 'HomecareController@index');
 });
 
 // URI Route Backend

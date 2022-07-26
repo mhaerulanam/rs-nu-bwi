@@ -12,8 +12,8 @@
         <div class="right-side">
             <ul class="contact-info" style="margin: 16px">
                 <li class="item">
-                    <div class="icon-box" style="margin: auto; !important">
-                        <i style="margin: auto; !important" class="fa fa-envelope-o"></i>
+                    <div class="icon-box" style="display:flex; justify-content: center;   align-items: center; !important">
+                        <i class="fa fa-envelope-o"></i>
                     </div>
                     <strong>Email</strong>
                     <br />
@@ -22,10 +22,8 @@
                     </a>
                 </li>
                 <li class="item">
-                    <div class="icon-box">
-                        <span>
-                            <i class="fa fa-phone"></i>
-                        </span>
+                    <div class="icon-box" style="display:flex; justify-content: center;   align-items: center; !important">
+                        <i class="fa fa-phone"></i>
                     </div>
                     <strong>Call Now</strong>
                     <br />
@@ -154,7 +152,7 @@
                     <a href="/user/konsultasi">Konsultasi</a>
                 </li>
                 <li>
-                    <a href="#">Homecare</a>
+                    <a href="/user/homecare">Homecare</a>
                 </li>
                 <li
                     class="dropdown {{ (Request::segment(2) == 'fasilitas-poli'
