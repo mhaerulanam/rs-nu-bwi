@@ -19,6 +19,7 @@ class HomecareAdminSeeder extends Seeder
             [
                 'id_pasien' => 'RM-22-07-001',
                 'kondisi_pasien' => 'Sehat',
+                'created_at' => now(),
             ]
         ];
 

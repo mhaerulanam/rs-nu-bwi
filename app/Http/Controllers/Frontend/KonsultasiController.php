@@ -17,23 +17,50 @@ class KonsultasiController extends Controller
     public function index()
     {
 
-        $email = Auth::user()->email;
+        if (Auth::user()) {
+            $email = Auth::user()->email;
+            try {
+                $data['banners'] = Banner::where('status', true)
+                    ->orderByDesc('id')
+                    ->first();
 
-        try {
-            $data['banners'] = Banner::where('status', true)
-                ->orderByDesc('id')
-                ->first();
-
-            $data['konsultasiMasuk'] = KonsultasiAdmin::where('email', $email)
-                ->where('status_pasien', false)->get();
-            $data['konsultasiMasukRead'] = KonsultasiAdmin::where('email', $email)
-                ->where('status_pasien', true)->get();
-            return view('Frontend.konsultasi', $data);
-        } catch (Exception $th) {
-            return back()->withError($th->getMessage());
-        } catch (\Illuminate\Database\QueryException $th) {
-            return back()->withError($th->getMessage());
+                $data['konsultasiMasuk'] = KonsultasiAdmin::where('email', $email)
+                    ->where('status_pasien', false)
+                    ->orderByDesc('updated_at')
+                    ->get();
+                $data['konsultasiMasukRead'] = KonsultasiAdmin::where('email', $email)
+                    ->where('status_pasien', true)
+                    ->orderByDesc('updated_at')
+                    ->get();
+                $data['konsultasiTerKirim'] = KonsultasiAdmin::where('email', $email)
+                    ->where('status_pasien', null)
+                    ->orderByDesc('id')
+                    ->get();
+                return view('Frontend.konsultasi', $data);
+            } catch (Exception $th) {
+                return $th->getMessage();
+                return back()->withError($th->getMessage());
+            } catch (\Illuminate\Database\QueryException $th) {
+                return back()->withError($th->getMessage());
+            }
+        } else {
+            try {
+                $data['banners'] = Banner::where('status', true)
+                    ->orderByDesc('id')
+                    ->first();
+                    $data['konsultasiMasuk'] = [];
+                    $data['konsultasiMasukRead'] = [] ;
+                    $data['konsultasiTerKirim'] = [];
+                return view('Frontend.konsultasi', $data)->with([
+                    'error' => 'Silahkan Login terlebih dahulu, untuk melihat riwayat konsultasi! ',
+                ]);
+            } catch (Exception $th) {
+                return back()->withError($th->getMessage());
+            } catch (\Illuminate\Database\QueryException $th) {
+                return back()->withError($th->getMessage());
+            }
         }
+
     }
 
     public function addKonsultasi()

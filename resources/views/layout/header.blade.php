@@ -148,10 +148,10 @@
                         </li>
                     </ul>
                 </li>
-                <li>
+                <li class="{{ Request::segment(2) == 'konsultasi' ? 'active' : '' }}">
                     <a href="/user/konsultasi">Konsultasi</a>
                 </li>
-                <li>
+                <li class="{{ Request::segment(2) == 'homecare' ? 'active' : '' }}">
                     <a href="/user/homecare">Homecare</a>
                 </li>
                 <li

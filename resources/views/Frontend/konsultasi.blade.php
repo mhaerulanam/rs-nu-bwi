@@ -37,7 +37,7 @@
                         <li>
                             <a href="/">home &nbsp;/</a>
                         </li>
-                        <li style="color: rgb(253, 201, 30) !important">Blog Details</li>
+                        <li style="color: rgb(253, 201, 30) !important">Konsultasi</li>
                     </ul>
                 </div>
             </div>
@@ -47,7 +47,7 @@
             style="background-image:url(/frontend/images/background/3.jpg); color: rgb(218, 167, 2) !important">
             <div class="container">
                 <div class="title-text">
-                    <h1>Blog Details</h1>
+                    <h1>Konsultasi</h1>
                     <ul class="title-menu clearfix">
                         <li>
                             <a href="/">home &nbsp;/</a>
@@ -58,12 +58,15 @@
             </div>
         </section>
     @endif
+    @if (!empty($error))
+        <div class="alert alert-danger alert-dismissible" role="alert">
+            <center><strong>Silahkan <a href="/user/homecare" style="color: red; font-weight:bold;">Login</a> terlebih dahulu, untuk melihat riwayat konsultasi Anda! </strong></center>
+        </div>
+    @endif
     <!--End Page Title-->
     <section class="blog-section style-four section">
         <div class="container">
             <div class="w3-bar w3-black">
-                {{-- btn-style-one --}}
-                {{-- btn-outline --}}
                 <div class="tab-masuk" style="display: flex">
                     <button class="btn-style-one" id="kotak_masuk" onclick="openCity('kotakMasuk')">Kotak Masuk</button>
                     <button class="btn-outline" id="kotak_terkirim" onclick="openCity('kotakTerkirim')">Kotak
@@ -73,11 +76,9 @@
             <div id="kotakMasuk" class="w3-container city">
                 @include('Frontend.konsultasi-kotak-masuk')
             </div>
-
             <div id="kotakTerkirim" class="w3-container city" style="display:none">
                 @include('Frontend.konsultasi-kotak-terkirim')
             </div>
-
         </div>
     </section>
     <script>
@@ -95,10 +96,14 @@
 
             if (cityName == 'kotakTerkirim') {
                 console.log(kt);
+                document.getElementById("detailMessage").style.display =
+                    "none";
                 kt.className = 'btn-style-one';
                 km.className = "btn-outline";
             } else {
                 console.log(km);
+                document.getElementById("detailMessageTerkirim").style.display =
+                    "none";
                 kt.className = 'btn-outline';
                 km.className = "btn-style-one";
             }

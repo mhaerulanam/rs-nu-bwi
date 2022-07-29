@@ -47,7 +47,7 @@ class AuthenticatedSessionController extends Controller
                 break;
             case 2:
                 $request->session()->regenerate();
-                return redirect()->intended('/');
+                return redirect()->intended('/user/homecare');
                 break;
             default:
                 // $request->session()->regenerate();

@@ -50,6 +50,8 @@ Route::group(['namespace' => 'App\Http\Controllers\Frontend'], function () {
     Route::get('/user/add-konsultasi', 'KonsultasiController@addKonsultasi');
 
     Route::get('/user/homecare', 'HomecareController@index');
+    Route::post('/show-homecare', 'HomecareController@show');
+    Route::post('/add-homecare', 'HomecareController@store')->name('add-homecare');
 });
 
 // URI Route Backend

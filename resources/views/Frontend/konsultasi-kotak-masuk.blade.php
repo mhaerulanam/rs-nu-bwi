@@ -10,7 +10,7 @@
                 </div>
             </div>
             <div class="inbox_chat">
-                @if (!$konsultasiMasuk->isEmpty())
+                @if (!empty($konsultasiMasuk))
                     @foreach ($konsultasiMasuk as $data)
                         <a href="javascript:updateform({{ $data->id }});">
                             <div class="chat_list active_chat" id="chat{{ $data->id }}">
@@ -27,7 +27,7 @@
                         </a>
                     @endforeach
                 @endif
-                @if (!$konsultasiMasukRead->isEmpty())
+                @if (!empty($konsultasiMasukRead))
                     @foreach ($konsultasiMasukRead as $data)
                         <a href="javascript:openDetailMessage({{ $data->id }});">
                             <div class="chat_list">
