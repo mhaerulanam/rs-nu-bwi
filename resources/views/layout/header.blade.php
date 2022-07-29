@@ -1,4 +1,5 @@
 <!--Header Upper-->
+<meta name="csrf-token" content="{{ csrf_token() }}">
 <section class="header-uper">
     <div class="container clearfix">
         <div class="logo">
@@ -175,7 +176,7 @@
             </ul>
             @if (Auth::user() && Auth::user()->role == 2)
                 <ul class="nav navbar-nav" style="float:right">
-                    <li class="dropdown {{ Request::segment(2) == 'sejarah' ? 'active' : '' }} float-right">
+                    <li class="dropdown {{ Request::segment(1) == '/change-password' ? 'active' : '' }} float-right">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
                             aria-haspopup="true" aria-expanded="false">
                             <img src="/upload/admin/default.png" alt class="w-px-40 h-auto rounded-circle"
@@ -184,14 +185,18 @@
                             <span class="caret"></span></a>
                         <ul class="dropdown-menu">
                             <li>
+                                <form method="" action="">
+                                    <a href="/change-password"> Ubah Password</a>
+                                </form>
+                            </li>
+                            <li>
                                 <!-- Authentication -->
                                 <form method="POST" action="{{ route('logout') }}">
                                     @csrf
-                                    <x-responsive-nav-link :href="route('logout')"
+                                    <a href="route('logout')"
                                         onclick="event.preventDefault();
-                                                    this.closest('form').submit();">
-                                        {{ __('Log Out') }}
-                                    </x-responsive-nav-link>
+                                                    this.closest('form').submit();"> Log out
+                                    </a>
                                 </form>
                             </li>
                         </ul>

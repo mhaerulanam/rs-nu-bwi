@@ -1,8 +1,20 @@
 @extends('layout')
 @section('content')
-    <!--=================================
-                        =            Page Slider            =
-                        ==================================-->
+    @if ($message = Session::get('success'))
+        <Center>
+            <div class="alert alert-success" role="alert">
+                {{ $message }}
+            </div>
+        </Center>
+    @endif
+
+    @if ($message = Session::get('error'))
+        <center>
+            <div class="alert alert-danger" role="alert">
+                {{ $message }}
+            </div>
+        </center>
+    @endif
     <div class="hero-slider">
         @if (!$banners->isEmpty())
             @foreach ($banners as $no => $data)
@@ -66,8 +78,8 @@
                             <div class="inner-box"style="max-height: 450px">
                                 <div class="img_holder">
                                     <a href="service.html">
-                                        <img src="upload/fasilitas/{{ $data->image }}" style="height: 200px"
-                                            alt="images" class="img-responsive">
+                                        <img src="upload/fasilitas/{{ $data->image }}" style="height: 200px" alt="images"
+                                            class="img-responsive">
                                     </a>
                                 </div>
                                 <div class="image-content text-center" style="max-height: 220px">

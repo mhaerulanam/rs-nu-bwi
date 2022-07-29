@@ -21,7 +21,7 @@ Route::group(['namespace' => 'App\Http\Controllers\Auth'], function () {
 
 // URI Route Frontend
 Route::group(['namespace' => 'App\Http\Controllers\Frontend'], function () {
-    Route::get('/', 'BerandaController@index');
+    Route::get('/', 'BerandaController@index')->name('beranda');
     Route::get('/beranda', 'BerandaController@index');
     Route::get('/user/sejarah', 'SejarahController@index');
     Route::get('/user/visimisi', 'VisiMisiController@index');
@@ -52,6 +52,9 @@ Route::group(['namespace' => 'App\Http\Controllers\Frontend'], function () {
     Route::get('/user/homecare', 'HomecareController@index');
     Route::post('/show-homecare', 'HomecareController@show');
     Route::post('/add-homecare', 'HomecareController@store')->name('add-homecare');
+
+    Route::get('/change-password', 'ChangePasswordController@index');
+    Route::post('/change-password', 'ChangePasswordController@changePassword')->name('change.password');
 });
 
 // URI Route Backend
