@@ -72,7 +72,7 @@
                 <td class="text-center">
                     <form onsubmit="return confirm('Apakah Anda Yakin ?');"
                         action="{{ route('homecare-admin.destroy', $data->id) }}" method="POST">
-                        <a href="{{ route('homecare-admin.edit', $data->id) }}" class="btn btn-warning">EDIT</a>
+                        {{--  <a href="{{ route('homecare-admin.edit', $data->id) }}" class="btn btn-warning">EDIT</a>  --}}
                         @csrf
                         @method('DELETE')
                         <button type="submit" class="btn btn-danger">HAPUS</button>

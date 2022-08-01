@@ -125,6 +125,31 @@ class HomecareAdminController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $homecareAdmin = HomecareAdmin::where('id', $id)->first();
+
+        if (empty($homecareAdmin)) {
+            return redirect()
+                ->back()
+                ->withInput()
+                ->with([
+                    'error' => 'Data homecare tidak ditemukan!',
+                ]);
+        }
+
+        $data = HomecareAdmin::where('id', $id)->delete();
+
+        if ($data) {
+            return redirect('/homecare-admin')
+                ->with([
+                    'success' => 'Data Berhasil Dihapus',
+                ]);
+        } else {
+            return redirect()
+                ->back()
+                ->withInput()
+                ->with([
+                    'error' => 'Data Gagal Dihapus!',
+                ]);
+        }
     }
 }
