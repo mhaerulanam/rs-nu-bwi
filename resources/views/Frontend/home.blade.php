@@ -117,7 +117,7 @@
                                     <div style="margin: 16px">
                                         <p>{!! strip_tags(Str::limit($data->description, 300, $end = ' ...')) !!}</p>
                                     </div>
-                                    <a href="#" class="btn btn-main">read more</a>
+                                    <a href="/user/detail/berita/{{ $data->id }}" class="btn btn-main">read more</a>
                                 </div>
                             </div>
                         </div>
