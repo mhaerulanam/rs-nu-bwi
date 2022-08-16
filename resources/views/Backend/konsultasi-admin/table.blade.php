@@ -15,10 +15,10 @@
         @forelse ($konsultasiAdmin as $data)
             <tr class="{{ $data->status_admin ? '' : 'bg-light' }}">
                 <td>
-                    @if ($data->status_admin)
-                        <div class="statuss"></div>
-                    @else
+                    @if ($data->status_admin == false)
                         <div class="statuss active"></div>
+                    @else
+                        <div class="statuss"></div>
                     @endif
                 </td>
                 <td>{{ $data->created_at->format('d - m - Y') }}</td>

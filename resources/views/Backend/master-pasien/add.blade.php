@@ -1,5 +1,8 @@
 <div class="card-header d-flex align-items-center justify-content-between">
     <h5 class="mb-0">Tabel Data Master Pasien</h5>
+    <center>
+        <p>Default Password User : <span style="color: red">pWd-rme9?o</span> </p>
+    </center>
     <small class="text-muted float-end" style="margin-right: 24px">
         <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exLargeModal">
             ++ Tambah Data

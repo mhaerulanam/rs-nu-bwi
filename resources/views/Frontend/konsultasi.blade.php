@@ -14,17 +14,21 @@
     @endif
 
     @if ($message = Session::get('success'))
-        <div class="alert alert-success alert-dismissible" role="alert">
-            <strong>{{ $message }}</strong>
-            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-        </div>
+        <center>
+            <div class="alert alert-success alert-dismissible" role="alert">
+                <strong>{{ $message }}</strong>
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        </center>
     @endif
 
     @if ($message = Session::get('error'))
-        <div class="alert alert-danger alert-dismissible" role="alert">
-            <strong>{{ $message }}</strong>
-            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-        </div>
+        <center>
+            <div class="alert alert-danger alert-dismissible" role="alert">
+                <strong>{{ $message }}</strong>
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        </center>
     @endif
     <!--Page Title-->
     @if ($banners != null)
@@ -60,7 +64,8 @@
     @endif
     @if (!empty($error))
         <div class="alert alert-danger alert-dismissible" role="alert">
-            <center><strong>Silahkan <a href="/user/homecare" style="color: red; font-weight:bold;">Login</a> terlebih dahulu, untuk melihat riwayat konsultasi Anda! </strong></center>
+            <center><strong>Silahkan <a href="/user/homecare" style="color: red; font-weight:bold;">Login</a> terlebih
+                    dahulu, untuk melihat riwayat konsultasi Anda! </strong></center>
         </div>
     @endif
     <!--End Page Title-->

@@ -87,9 +87,9 @@ class KonsultasiController extends Controller
             'noHp' => $request->noHp,
             'pekerjaan' => $request->pekerjaan,
             'keluhan' => $request->konsultasi,
-            'status_pasien' => false,
             'status_admin' => false,
             'created_at' => now(),
+            'updated_at' => now(),
         ];
 
         $save = DB::table('konsultasi_admins')->insert($dtKonsultasi);

@@ -6,7 +6,7 @@ use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
-class AlurIGDSeeder extends Seeder
+class MasterDiagnosaSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -17,11 +17,19 @@ class AlurIGDSeeder extends Seeder
     {
         $posts = [
             [
-                'image' => 'default.jpg',
+                'diagnosa' => 'Kejang Demam',
+                'created_at' => now(),
+            ],
+            [
+                'diagnosa' => 'Migren',
+                'created_at' => now(),
+            ],
+            [
+                'diagnosa' => 'Insomnia',
                 'created_at' => now(),
             ],
         ];
 
-        DB::table('alur_igds')->insert($posts);
+        DB::table('master_diagnosas')->insert($posts);
     }
 }

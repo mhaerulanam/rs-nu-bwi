@@ -23,8 +23,9 @@ class BPJSSeeder extends Seeder
 
 Ex aute tempor eiusmod sunt aliqua sunt sunt. Aliquip proident consequat ipsum mollit. Magna tempor sunt do laborum laborum. Aliquip labore esse fugiat id. Excepteur adipisicing fugiat consectetur voluptate laboris dolor nulla sunt aute. Sit voluptate consequat ex minim veniam do dolore occaecat culpa. Exercitation elit id occaecat aliquip cupidatat aliqua commodo aute excepteur Lorem do ut anim sit.
 
-Elit nulla laboris cupidatat et reprehenderit Lorem pariatur magna ea. Ipsum consequat voluptate mollit ipsum culpa anim enim commodo cupidatat et ut officia et qui. Velit minim amet velit aute tempor in esse aliquip occaecat labore tempor laborum duis consectetur. Anim velit culpa eu nulla.'
-            ]
+Elit nulla laboris cupidatat et reprehenderit Lorem pariatur magna ea. Ipsum consequat voluptate mollit ipsum culpa anim enim commodo cupidatat et ut officia et qui. Velit minim amet velit aute tempor in esse aliquip occaecat labore tempor laborum duis consectetur. Anim velit culpa eu nulla.',
+                'created_at' => now(),
+                ]
         ];
 
         DB::table('bpjs')->insert($post);

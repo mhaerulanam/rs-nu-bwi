@@ -17,7 +17,8 @@ class StrukturSeeder extends Seeder
     {
         $posts = [
             [
-                'image' => 'default.jpg'
+                'image' => 'default.jpg',
+                'created_at' => now(),
             ]
         ];
 

@@ -2,7 +2,9 @@
 
 namespace Database\Seeders;
 
+use App\Models\Article;
 use App\Models\HomecareAdmin;
+use App\Models\MasterDiagnosa;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
@@ -16,7 +18,12 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         $this->call([
+            BannerSeeder::class,
+            ArticleSeeder::class,
+            CategoriArticleSeeder::class,
+            FasilitasSeeder::class,
             VisiMisiSeeder::class,
+            SejarahSeeder::class,
             StrukturSeeder::class,
             AlurInapSeeder::class,
             AlurJalanSeeder::class,
@@ -26,6 +33,17 @@ class DatabaseSeeder extends Seeder
             KonsultasiAdminSeeder::class,
             HomecareAdminSeeder::class,
             UserSeeder::class,
+            StafSeeder::class,
+            DokterSeeder::class,
+            JabatanSeeder::class,
+            FasilitasPoliSeeder::class,
+            FasilitasIgdSeeder::class,
+            FasilitasInapSeeder::class,
+            FasilitasPenunjangSeeder::class,
+            MasterPasienSeeder::class,
+            MasterDiagnosaSeeder::class,
+            MasterLayananSeeder::class,
+            GaleriSeeder::class,
         ]);
     }
 }

@@ -41,7 +41,7 @@
                         <span>Konsultasi</span>
                     </h3>
                 </div>
-                <form name="contact_form" class="default-form contact-form" action="{{ url('/user/konsultasi')}}" method="post">
+                <form name="contact_form" class="default-form contact-form" action="{{ url('/add-konsultasi')}}" method="post">
                     @csrf
                     <div class="row">
                         <div class="col-md-12 col-sm-12 col-xs-12">

@@ -23,9 +23,15 @@ class UserSeeder extends Seeder
                 'password'  => '$2y$10$nZOKK1RuT9w./48IkbqufuawL.UvfxR0Nw7i04K5UiGhqvXiyfZae',
                 'role' => 1,
                 'created_at' => now(),
+            ],
+            [
+                'name' => 'dembele',
+                'email' => 'dembele30@mail.com',
+                'password'  => '$2y$10$cvy6RPiZgdqCnr1UifWw5OeVwe68Zz.Jq.flPwANeY.NQc0CRxUIy',
+                'role' => 2,
+                'created_at' => now(),
             ]
         ];
-
 
         DB::table('users')->insert($post);
     }

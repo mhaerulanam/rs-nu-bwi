@@ -19,7 +19,7 @@
                                             alt="sunil"> </div>
                                     <div class="chat_ib">
                                         <h5> Admin<span
-                                                class="chat_date">{{ $data->updated_at->format('d M Y') }}</span></h5>
+                                                class="chat_date">{{ isset($data->updated_at) ? $data->updated_at->format('d M Y') : ''}}</span></h5>
                                         <p>{{ Str::limit($data->title, 50, $end = ' ...') }}</p>
                                     </div>
                                 </div>
@@ -36,7 +36,7 @@
                                             alt="sunil"> </div>
                                     <div class="chat_ib">
                                         <h5>Admin  <span
-                                                class="chat_date">{{ $data->updated_at->format('d M Y') }}</span></h5>
+                                                class="chat_date">{{ isset($data->updated_at) ? $data->updated_at->format('d M Y') : ''}}</span></h5>
                                         <p>{{ Str::limit($data->title, 50, $end = ' ...') }}</p>
                                     </div>
                                 </div>

@@ -79,6 +79,8 @@ class KonsultasiAdminController extends Controller
     public function update(Request $request, $id)
     {
         $changeKonsultasi = [
+            'status_pasien' => true,
+            'status_admin' => true,
             'balas' => $request->balas,
             'updated_at' => now(),
         ];

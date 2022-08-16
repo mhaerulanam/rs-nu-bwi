@@ -65,7 +65,7 @@ class HomecareAdminController extends Controller
                 ->join('users as u', 'u.id', 'mp.id_user')
                 ->orderByDesc('homecare_admins.id')
                 ->where('mp.no_rm', $noRm)
-                ->whereBetween('homecare_admins.created_at', [$tanggal_awal, $tanggal_akhir])
+                ->whereBetween('homecare_admins.created_at', ["$tanggal_awal 00:00:00", "$tanggal_akhir 23:59:59"])
                 ->get();
         } else {
             $data = DB::table('homecare_admins')
@@ -75,7 +75,7 @@ class HomecareAdminController extends Controller
                 ->join('master_layanans as ml', 'ml.id', 'mp.id_layanan')
                 ->join('users as u', 'u.id', 'mp.id_user')
                 ->orderByDesc('homecare_admins.id')
-                ->whereBetween('homecare_admins.created_at', [$tanggal_awal, $tanggal_akhir])
+                ->whereBetween('homecare_admins.created_at', ["$tanggal_awal 00:00:00", "$tanggal_akhir 23:59:59"])
                 ->get();
         }
         $pdf = PDF::loadview('Backend/laporan/homecare_pdf',['dataHomecare'=>$data, 'start_date'=>$tanggal_awal, 'end_date'=>$tanggal_akhir]);
