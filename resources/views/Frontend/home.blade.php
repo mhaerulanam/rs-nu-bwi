@@ -77,13 +77,13 @@
                         <div class="item" style="max-height: 450px">
                             <div class="inner-box"style="max-height: 450px">
                                 <div class="img_holder">
-                                    <a href="service.html">
+                                    <a href="">
                                         <img src="upload/fasilitas/{{ $data->image }}" style="height: 200px" alt="images"
                                             class="img-responsive">
                                     </a>
                                 </div>
                                 <div class="image-content text-center" style="max-height: 220px">
-                                    <a href="service.html">
+                                    <a href="">
                                         <h6>{{ $data->name }}</h6>
                                     </a>
                                     <p>{{ Str::limit($data->description, 180, $end = ' ...') }}</p>
