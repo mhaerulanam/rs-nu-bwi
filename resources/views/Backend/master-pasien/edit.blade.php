@@ -24,7 +24,7 @@
             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
         </div>
     @endif
-    <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Dashboard/</span> Sejarah </h4>
+    <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Dashboard/</span> Pasien </h4>
     <!-- Basic Layout & Basic with Icons -->
     <div class="row">
         <!-- Basic Layout -->

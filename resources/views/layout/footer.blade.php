@@ -1,104 +1,96 @@
 <!--footer-main-->
+<div class="margin" style="margin-top: 100px"></div>
 <footer class="footer-main">
     <div class="footer-top">
         <div class="container">
             <div class="row">
                 <div class="col-md-4 col-sm-6 col-xs-12">
                     <div class="about-widget">
-                        <div class="footer-logo">
-                            <figure>
-                                <a href="index.html">
-                                    <img src="images/logo-2.png" alt="">
-                                </a>
-                            </figure>
-                        </div>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias, temporibus?</p>
+                        <h6>About</h6>
+                        <p>Rumah Sakit Nahdlatul Ulama Banyuwangi.</p>
                         <ul class="location-link">
                             <li class="item">
                                 <i class="fa fa-map-marker"></i>
-                                <p>Modamba, NY 80021, United States</p>
+                                <a href="https://goo.gl/maps/PMpovFbDUaCvx2Pz5"><p>Jl. Raya Mangir, Krajan, Mangir, Kec. Rogojampi, Kabupaten Banyuwangi, Jawa Timur 68462</p></a>
                             </li>
                             <li class="item">
                                 <i class="fa fa-envelope-o" aria-hidden="true"></i>
                                 <a href="#">
-                                    <p>Support@medic.com</p>
+                                    <p>nuhospital@yahoo.co.id</p>
                                 </a>
                             </li>
                             <li class="item">
                                 <i class="fa fa-phone" aria-hidden="true"></i>
-                                <p>(88017) +123 4567</p>
+                                <p>(0333) 632965</p>
                             </li>
                         </ul>
-                        <ul class="list-inline social-icons">
+                        {{--  <ul class="list-inline social-icons">
                             <li><a href="#"><i class="fa fa-facebook"></i></a></li>
                             <li><a href="#"><i class="fa fa-twitter"></i></a></li>
                             <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
                             <li><a href="#"><i class="fa fa-vimeo"></i></a></li>
-                        </ul>
+                        </ul>  --}}
                     </div>
                 </div>
                 <div class="col-md-4 col-sm-6 col-xs-12">
                     <h6>Services</h6>
                     <ul class="menu-link">
                         <li>
-                            <a href="#">
-                                <i class="fa fa-angle-right" aria-hidden="true"></i>Orthopadic Liabilities</a>
+                            <a href="/beranda">
+                                <i class="fa fa-angle-right" aria-hidden="true"></i>Beranda</a>
                         </li>
                         <li>
-                            <a href="#">
-                                <i class="fa fa-angle-right" aria-hidden="true"></i>Dental Clinic</a>
+                            <a href="/user/sejarah">
+                                <i class="fa fa-angle-right" aria-hidden="true"></i>Profile RS</a>
                         </li>
                         <li>
-                            <a href="#">
-                                <i class="fa fa-angle-right" aria-hidden="true"></i>Dormamu Clinic</a>
+                            <a href="/user/alur-inap">
+                                <i class="fa fa-angle-right" aria-hidden="true"></i>Informasi</a>
                         </li>
                         <li>
-                            <a href="#">
-                                <i class="fa fa-angle-right" aria-hidden="true"></i>Psycological Clinic</a>
+                            <a href="/user/fasilitas-poli">
+                                <i class="fa fa-angle-right" aria-hidden="true"></i>Fasilitas</a>
                         </li>
                         <li>
-                            <a href="#">
-                                <i class="fa fa-angle-right" aria-hidden="true"></i>Gynaecological Clinic</a>
+                            <a href="/user/konsultasi">
+                                <i class="fa fa-angle-right" aria-hidden="true"></i>Konsultasi</a>
+                        </li>
+                        <li>
+                            <a href="/user/homecare">
+                                <i class="fa fa-angle-right" aria-hidden="true"></i>Homecare</a>
+                        </li>
+                        <li>
+                            <a href="/user/galeri">
+                                <i class="fa fa-angle-right" aria-hidden="true"></i>Galeri</a>
                         </li>
                     </ul>
                 </div>
                 <div class="col-md-4 col-sm-6 col-xs-12">
                     <div class="social-links">
-                        <h6>Recent Posts</h6>
-                        <ul>
-                            <li class="item">
-                                <div class="media">
-                                    <div class="media-left">
-                                        <a href="#">
-                                            <img class="media-object" src="images/blog/post-thumb-small.jpg"
-                                                alt="post-thumb">
-                                        </a>
-                                    </div>
-                                    <div class="media-body">
-                                        <h4 class="media-heading"><a href="#">Post Title</a></h4>
-                                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam, dolorem.
-                                        </p>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="item">
-                                <div class="media">
-                                    <div class="media-left">
-                                        <a href="#">
-                                            <img class="media-object" src="images/blog/post-thumb-small.jpg"
-                                                alt="post-thumb">
-                                        </a>
-                                    </div>
-                                    <div class="media-body">
-                                        <h4 class="media-heading">
-                                            <a href="#">Post Title</a>
-                                        </h4>
-                                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam, dolorem.
-                                        </p>
-                                    </div>
-                                </div>
-                            </li>
-                        </ul>
+                        <div class="section-title">
+                            <h4 style="color: white">Visi</h4>
+                        </div>
+                        <div name="contact_form" class="default-form contact-form" action="sendmail.php" method="post">
+                            <div class="row" style="padding: 16px;">
+                                <p style="text-align: justify">
+                                    Menjadi rumah sakit pilihan dengan layanan yang berkualitas dan terjangkau masyarakat.<a href="/user/visimisi" style="color: white">Selengkapnya</a>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="section-title">
+                            <h4 style="color: white">Misi</h4>
+                        </div>
+                        <div name="contact_form" class="default-form contact-form" action="sendmail.php" method="post">
+                            <div class="row" style="padding: 16px;">
+                                <p style="text-align: justify">
+                                    1. Menyelenggarakan pelayanan kesehatan yang islami, profesional, dan bermutu serta tetap peduli pada sesama dengan layanan yang profesional, transparant dan berakhlak mulia.<br/>
+                                    2. Mengutamakan kesehatan pasien serta memberikan kepuasan kepada pengunjung.<br/>
+                                    3. Membangun kualitas SDM RS yang profesional dalam memberikan pelayanan.<br/>
+                                    4. Meningkatkan sarana dan prasarana RS dalam memperluas jangkauan pelayanan kesehatan kepada masyarakat.<br/>
+                                    5. Menyelenggarakan sistem manajemen dengan tata kelola yang baik
+                                </p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -107,21 +99,10 @@
     <div class="footer-bottom">
         <div class="container clearfix">
             <div class="copyright-text">
-                <p>&copy; Copyright 2018. All Rights Reserved by
-                    <a href="index.html">Medic</a>
+                <p>&copy; Copyright 2022.
+                    <a href="index.html"></a>
                 </p>
             </div>
-            <ul class="footer-bottom-link">
-                <li>
-                    <a href="index.html">Home</a>
-                </li>
-                <li>
-                    <a href="about.html">About</a>
-                </li>
-                <li>
-                    <a href="contact.html">Contact</a>
-                </li>
-            </ul>
         </div>
     </div>
 </footer>

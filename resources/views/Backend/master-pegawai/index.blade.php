@@ -30,17 +30,17 @@
             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
         </div>
     @endif
-    <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Dashboard/</span> Fasilitas Inap </h4>
+    <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Dashboard/</span> Master Pegawai </h4>
     <!-- Basic Layout & Basic with Icons -->
     <div class="row">
         <!-- Basic Layout -->
         <div class="col-xxl">
             <div class="card mb-4">
 
-                @include('Backend.fasInap.add')
+                @include('Backend.master-pegawai.add')
 
                 <div class="card-body">
-                    @include('Backend.fasInap.table')
+                    @include('Backend.master-pegawai.table')
                 </div>
             </div>
         </div>

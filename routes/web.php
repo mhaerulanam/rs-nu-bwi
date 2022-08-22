@@ -93,6 +93,7 @@ Route::group(['middleware' => 'auth'], function () {
         Route::resource('/master-pasien', 'MasterPasienController');
         Route::resource('/master-diagnosa', 'MasterDiagnosaController');
         Route::resource('/master-layanan', 'MasterLayananController');
+        Route::resource('/master-pegawai', 'MasterPegawaiController');
 
         Route::resource('/galeri', 'GaleriController');
     });

@@ -5,6 +5,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Article;
 use App\Models\Banner;
 use App\Models\Fasilitas;
+use App\Models\VisiMisiTujuan;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 

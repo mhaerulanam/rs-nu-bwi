@@ -4,7 +4,7 @@
     <div class="container clearfix">
         <div class="logo">
             <figure>
-                <a href="index.html">
+                <a href="/beranda">
                     <img src="{{ asset('assets/logo/logo-rs-nu-bwi.png') }}" width="60"
                         style="margin: 16px 16px 0px 16px" alt="">
                 </a>
@@ -19,7 +19,7 @@
                     <strong>Email</strong>
                     <br />
                     <a href="#">
-                        <span>info@medic.com</span>
+                        <span>nuhospital@yahoo.co.id</span>
                     </a>
                 </li>
                 <li class="item">
@@ -28,7 +28,7 @@
                     </div>
                     <strong>Call Now</strong>
                     <br />
-                    <span>+ (88017) - 123 - 4567</span>
+                    <span>(0333) 632965</span>
                 </li>
             </ul>
         </div>

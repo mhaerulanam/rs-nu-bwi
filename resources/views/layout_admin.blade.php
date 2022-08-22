@@ -1,4 +1,4 @@
-@if(Auth::user()->role != 1)
+@if(Auth::user()->role != 1 && Auth::user()->role != 3)
     @php
         header("Location: " . URL::to('/'), true, 302);
         exit();

@@ -2,12 +2,11 @@
 <meta name="viewport"
     content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
 
-<title>Dashboard - Analytics | Sneat - Bootstrap 5 HTML Admin Template - Pro</title>
+<title>Dashboard RS Nu BWI</title>
 
 <meta name="description" content="" />
-
 <!-- Favicon -->
-<link rel="icon" type="image/x-icon" href="{{ asset('backend/assets/img/favicon/favicon.ico') }}" />
+<link rel="icon" type="image/x-icon" href="{{ asset('assets/logo/logo-rs-nu-bwi.png') }}" />
 
 <!-- Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com" />

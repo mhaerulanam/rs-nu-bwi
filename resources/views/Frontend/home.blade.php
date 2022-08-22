@@ -45,10 +45,10 @@
                     <div class="col-12">
                         <!-- Slide Content Start -->
                         <div class="content style text-center">
-                            <h2 class="text-white text-bold mb-2">Our Best Surgeons</h2>
-                            <p class="tag-text mb-5">Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel sunt animi
+                            {{--  <h2 class="text-white text-bold mb-2">Our Best Surgeons</h2>  --}}
+                            {{--  <p class="tag-text mb-5">Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel sunt animi
                                 sequi ratione quod at earum. <br>
-                                Quis quos officiis numquam!</p>
+                                Quis quos officiis numquam!</p>  --}}
                             {{-- <a href="#" class="btn btn-main btn-white">explore</a> --}}
                         </div>
                         <!-- Slide Content End -->
