@@ -58,6 +58,18 @@
                                         </select>
                                     </div>
                                 </div>
+                                <div class="col mb-0">
+                                    <div class="mb-3">
+                                        <label for="exampleFormControlSelect1" class="form-label">Poli</label>
+                                        <select class="form-select" id="exampleFormControlSelect1" name="id_poli" required
+                                            aria-label="Default select example">
+                                            <option selected disabled>Pilih Poli</option>
+                                            @foreach ($fasilitasPoli as $data)
+                                                <option value="{{ $data->id }}" {{ $data->id == $dokters->id_poli ? 'selected' : '' }}>{{ $data->title}}</option>
+                                            @endforeach
+                                        </select>
+                                    </div>
+                                </div>
                             </div>
                             <div class="row">
                                 <div class="col mb-3">

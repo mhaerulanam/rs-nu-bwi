@@ -27,6 +27,7 @@ Route::group(['namespace' => 'App\Http\Controllers\Frontend'], function () {
     Route::get('/user/visimisi', 'VisiMisiController@index');
     Route::get('/user/struktur-organisasi', 'StrukturOrganisasiController@index');
     Route::get('/user/dokter', 'DokterController@index');
+    Route::get('/user/jadwal-dokter', 'DokterController@jadwalDokter');
     Route::get('/user/alur-inap', 'AlurInapController@index');
     Route::get('/user/alur-jalan', 'AlurJalanController@index');
     Route::get('/user/alur-igd', 'AlurIgdController@index');

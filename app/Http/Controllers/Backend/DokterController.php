@@ -7,6 +7,7 @@ use App\Models\Dokter;
 use App\Models\JabatanDokter;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Image;
 
 class DokterController extends Controller
 {
@@ -17,12 +18,14 @@ class DokterController extends Controller
      */
     public function index()
     {
-        $data['dokters'] =  DB::table('dokters')->select('dokters.*', 'jd.jabatan')
+        $data['dokters'] =  DB::table('dokters')->select('dokters.*', 'jd.jabatan','fp.id as poli_id', 'fp.title as title_poli')
             ->join('jabatan_dokters as jd', 'jd.id', 'dokters.id_jabatan')
+            ->join('fasilitas_polis as fp','fp.id', 'dokters.id_poli')
             ->orderByDesc('id')
             ->get();
         $data['jabatan_dokters'] =  JabatanDokter::all();
         $data['jabatan'] =  DB::table('jabatan_dokters')->where('status', true)->get();
+        $data['fasilitasPoli'] = DB::table('fasilitas_polis')->get();
         return view('Backend/dokter.index', $data);
     }
 
@@ -49,6 +52,7 @@ class DokterController extends Controller
             'id_jabatan' => 'required',
             'jadwal' => 'required',
             'image' => 'mimes:jpeg,jpg,png,gif|required|max:10000',
+            'id_poli' => 'required'
         ]);
 
         $reqImage = $request->image;
@@ -63,6 +67,7 @@ class DokterController extends Controller
             'jadwal' => $request->jadwal,
             'id_jabatan' => $request->id_jabatan,
             'image' => $imageurl,
+            'id_poli' => $request->id_poli,
             'created_at' => now(),
         ];
 
@@ -104,6 +109,7 @@ class DokterController extends Controller
     {
         $data['dokters'] =  DB::table('dokters')->where('id', $id)->first();
         $data['jabatan'] =  DB::table('jabatan_dokters')->where('status', true)->get();
+        $data['fasilitasPoli'] = DB::table('fasilitas_polis')->get();
         return view('Backend/dokter.edit', $data);
     }
 
@@ -136,6 +142,7 @@ class DokterController extends Controller
             'jadwal' => $request->jadwal,
             'id_jabatan' => $request->id_jabatan,
             'image' => $imageurl,
+            'id_poli' => $request->id_poli,
             'updated_at' => now(),
         ];
 

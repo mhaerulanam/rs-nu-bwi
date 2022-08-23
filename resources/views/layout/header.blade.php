@@ -95,7 +95,11 @@
                         aria-expanded="false">Informasi <span class="caret"></span></a>
                     <ul class="dropdown-menu">
                         <li><a class="{{ Request::segment(2) == 'dokter' ? '' : 'light-style' }}"
-                                href="/user/dokter">Dokter & Jadwal</a>
+                                href="/user/dokter">Daftar Dokter</a>
+                        </li>
+                        <li role="separator" class="divider"></li>
+                        <li><a class="{{ Request::segment(2) == 'jadwal-dokter' ? '' : 'light-style' }}"
+                            href="/user/jadwal-dokter">Jadwal Dokter</a>
                         </li>
                         <li role="separator" class="divider"></li>
                         <li><a class="{{ Request::segment(2) == 'alur-inap' ? '' : 'light-style' }}"

@@ -5,6 +5,7 @@
             <th>Nama Lengkap</th>
             <th>Foto</th>
             <th>Jabatan</th>
+            <th>Poli</th>
             <th>Jadwal</th>
             <th>Aksi</th>
         </tr>
@@ -22,6 +23,7 @@
                     @endif
                 </td>
                 <td>{{ $data->jabatan }}</td>
+                <td>{{ $data->title_poli }}</td>
                 <td>{!! $data->jadwal !!}</td>
                 <td class="text-center">
                     <form onsubmit="return confirm('Apakah Anda Yakin ?');"
