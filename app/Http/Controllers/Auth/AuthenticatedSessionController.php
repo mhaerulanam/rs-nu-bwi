@@ -51,7 +51,7 @@ class AuthenticatedSessionController extends Controller
                 break;
             case 3:
                 $request->session()->regenerate();
-                return redirect()->intended('/dashboard');
+                return redirect()->intended('/konsultasi-admin');
                 break;
             default:
                 // $request->session()->regenerate();
