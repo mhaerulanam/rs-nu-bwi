@@ -211,20 +211,6 @@
                         </ul>
                     </li>
 
-                    <li class="{{ Request::segment(1) == 'konsultasi-admin' ? 'menu-item active' : 'menu-item' }}">
-                        <a href="/konsultasi-admin" class="menu-link">
-                            <i class="menu-icon tf-icons bx bx-chat"></i>
-                            <div data-i18n="Analytics">Konsultasi</div>
-                        </a>
-                    </li>
-
-                    <li class="{{ Request::segment(1) == 'homecare-admin' ? 'menu-item active' : 'menu-item' }}">
-                        <a href="/homecare-admin" class="menu-link">
-                            <i class="menu-icon tf-icons bx bx-support"></i>
-                            <div data-i18n="Analytics">Homecare</div>
-                        </a>
-                    </li>
-
                     <li class="{{ Request::segment(1) == 'galeri' ? 'menu-item active' : 'menu-item' }}">
                         <a href="/galeri" class="menu-link">
                             <i class="menu-icon tf-icons bx bx-cube-alt"></i>
@@ -280,7 +266,36 @@
                             </li>
                         </ul>
                     </li>
+                    <li
+                        class="{{ Request::segment(1) == '' ||
+                        Request::segment(1) == 'konsultasi-admin' ||
+                        Request::segment(1) == 'homecare-admin'
+                            ? 'menu-item active open'
+                            : 'menu-item' }}">
+                        <a href="javascript:void(0);" class="menu-link menu-toggle">
+                            <i class="menu-icon tf-icons bx bx-copy"></i>
+                            <div data-i18n="Analytics">Transaksi</div>
+                        </a>
 
+                        <ul class="menu-sub">
+                            <li
+                                class="{{ Request::segment(1) == 'konsultasi-admin' ? 'menu-item active' : 'menu-item' }}">
+                                <a href="/konsultasi-admin" class="menu-link">
+                                    <i class="menu-icon tf-icons bx bx-chat"></i>
+                                    <div data-i18n="Analytics">Konsultasi</div>
+                                </a>
+                            </li>
+                        </ul>
+                        <ul class="menu-sub">
+                            <li
+                                class="{{ Request::segment(1) == 'homecare-admin' ? 'menu-item active' : 'menu-item' }}">
+                                <a href="/homecare-admin" class="menu-link">
+                                    <i class="menu-icon tf-icons bx bx-support"></i>
+                                    <div data-i18n="Analytics">Homecare</div>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
                 </ul>
             @else
                 <ul class="menu-inner py-1">
@@ -320,18 +335,35 @@
                         </ul>
                     </li>
 
-                    <li class="{{ Request::segment(1) == 'konsultasi-admin' ? 'menu-item active' : 'menu-item' }}">
-                        <a href="/konsultasi-admin" class="menu-link">
-                            <i class="menu-icon tf-icons bx bx-chat"></i>
-                            <div data-i18n="Analytics">Konsultasi</div>
+                    <li
+                        class="{{ Request::segment(1) == '' ||
+                        Request::segment(1) == 'konsultasi-admin' ||
+                        Request::segment(1) == 'homecare-admin'
+                            ? 'menu-item active open'
+                            : 'menu-item' }}">
+                        <a href="javascript:void(0);" class="menu-link menu-toggle">
+                            <i class="menu-icon tf-icons bx bx-copy"></i>
+                            <div data-i18n="Analytics">Transaksi</div>
                         </a>
-                    </li>
 
-                    <li class="{{ Request::segment(1) == 'homecare-admin' ? 'menu-item active' : 'menu-item' }}">
-                        <a href="/homecare-admin" class="menu-link">
-                            <i class="menu-icon tf-icons bx bx-support"></i>
-                            <div data-i18n="Analytics">Homecare</div>
-                        </a>
+                        <ul class="menu-sub">
+                            <li
+                                class="{{ Request::segment(1) == 'konsultasi-admin' ? 'menu-item active' : 'menu-item' }}">
+                                <a href="/konsultasi-admin" class="menu-link">
+                                    <i class="menu-icon tf-icons bx bx-chat"></i>
+                                    <div data-i18n="Analytics">Konsultasi</div>
+                                </a>
+                            </li>
+                        </ul>
+                        <ul class="menu-sub">
+                            <li
+                                class="{{ Request::segment(1) == 'homecare-admin' ? 'menu-item active' : 'menu-item' }}">
+                                <a href="/homecare-admin" class="menu-link">
+                                    <i class="menu-icon tf-icons bx bx-support"></i>
+                                    <div data-i18n="Analytics">Homecare</div>
+                                </a>
+                            </li>
+                        </ul>
                     </li>
                 </ul>
             @endif
