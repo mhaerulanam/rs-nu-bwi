@@ -61,14 +61,6 @@
                             <label for="image" class="form-label">Image</label>
                             <input type='file' name="image" id="imgInp" class="form-control" />
                         </div>
-                        <div class="col mb-0">
-                            <div class="form-check mt-3">
-                                <input type="hidden" name="status" value="0">
-                                <input type="checkbox" value="1" class="form-check-input" id="scales"
-                                    name="status">
-                                <label class="form-check-label" for="defaultCheck1"> Status </label>
-                            </div>
-                        </div>
                     </div>
                     <div class="row g-2" style="margin-top: 16px">
                         <div class="col mb-0">

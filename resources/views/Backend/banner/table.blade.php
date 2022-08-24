@@ -1,9 +1,3 @@
-@if (Auth::user()->role != 1)
-    @php
-        header("Location: " . URL::to('/dashboard'), true, 302);
-        exit();
-    @endphp
-@endif
 <table id="example" class="table table-striped table-bordered" style="width:100%">
     <thead>
         <tr>

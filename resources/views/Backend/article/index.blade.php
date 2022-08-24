@@ -1,9 +1,3 @@
-@if (Auth::user()->role != 1)
-    @php
-        header("Location: " . URL::to('/dashboard'), true, 302);
-        exit();
-    @endphp
-@endif
 @extends('layout_admin')
 @section('content')
     {{-- menampilkan error validasi --}}

@@ -285,6 +285,41 @@
             @else
                 <ul class="menu-inner py-1">
                     <!-- Layouts -->
+                    <li
+                        class="{{ Request::segment(1) == '' ||
+                        Request::segment(1) == 'banner' ||
+                        Request::segment(1) == 'fasilitas' ||
+                        Request::segment(1) == 'article'
+                            ? 'menu-item active open'
+                            : 'menu-item' }}">
+                        <a href="javascript:void(0);" class="menu-link menu-toggle">
+                            <i class="menu-icon tf-icons bx bx-layout"></i>
+                            <div data-i18n="Analytics">Dashboard</div>
+                        </a>
+
+                        <ul class="menu-sub">
+                            <li class="{{ Request::segment(1) == 'banner' ? 'menu-item active' : 'menu-item' }}">
+                                <a href="/banner" class="menu-link">
+                                    <div data-i18n="Without menu">Banner</div>
+                                </a>
+                            </li>
+                        </ul>
+                        <ul class="menu-sub">
+                            <li class="{{ Request::segment(1) == 'fasilitas' ? 'menu-item active' : 'menu-item' }}">
+                                <a href="/fasilitas" class="menu-link">
+                                    <div data-i18n="Without menu">Fasilitas</div>
+                                </a>
+                            </li>
+                        </ul>
+                        <ul class="menu-sub">
+                            <li class="{{ Request::segment(1) == 'article' ? 'menu-item active' : 'menu-item' }}">
+                                <a href="/article" class="menu-link">
+                                    <div data-i18n="Without menu">Artikel</div>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+
                     <li class="{{ Request::segment(1) == 'konsultasi-admin' ? 'menu-item active' : 'menu-item' }}">
                         <a href="/konsultasi-admin" class="menu-link">
                             <i class="menu-icon tf-icons bx bx-chat"></i>
