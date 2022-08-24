@@ -30,7 +30,7 @@
                                 <img src="/upload/galeri/{{ $data->image }}" class="img-responsive" style="object-fit: cover; height: 300px !important" alt="Gallery image {{ $data->title }}">
                                 <a data-fancybox="images" href="/upload/galeri/{{ $data->image }}"></a>
                                 <h3>{{ $data->title }}</h3>
-                                <p>!! strip_tags(Str::limit($data->description, 50, $end = ' ...')) !!</p>
+                                <p>{!! strip_tags(Str::limit($data->description, 50, $end = ' ...')) !!}</p>
                             </div>
                         </div>
                     @endforeach
