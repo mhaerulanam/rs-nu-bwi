@@ -18,7 +18,7 @@
             <section class="blog-section bg-gray section style-three pb-0">
                 <div class="section-title text-center" style="margin-bottom: 40px">
                     <h3>Daftar
-                        <span>Poli</span>
+                        <span>IGD</span>
                     </h3>
                 </div>
                 <div class="container" style="margin-bottom: 120px">
