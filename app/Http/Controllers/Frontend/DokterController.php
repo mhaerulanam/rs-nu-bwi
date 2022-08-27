@@ -20,7 +20,7 @@ class DokterController extends Controller
             ->join('jabatan_dokters as jd', 'jd.id', 'dokters.id_jabatan')
             ->join('fasilitas_polis as fp', 'fp.id', 'dokters.id_poli')
             ->orderByDesc('id')
-            ->paginate(8);
+            ->paginate(3);
         return view('frontend.dokter', $data);
     }
 
