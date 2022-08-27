@@ -143,7 +143,7 @@
                                                 <p id="kondisiPasien"
                                                     style="padding: 16px; font-size: 14px; text-align: justify;"></p>
                                             </div>
-                                            <span class="label-contents">Pelayanan lebih lanjut hubungi : <a href="https://wa.me/081254214412" style="color: red">081254214412 (Admin)</a></span>
+                                            <span class="label-contents">Pelayanan lebih lanjut hubungi : <a href="https://wa.me/6281254214412" style="color: red">081254214412 (Admin)</a></span>
                                         </div>
                                     </div>
                                 </div>
