@@ -18,7 +18,7 @@ class FasilitasPoliController extends Controller
         $data['fasPoli'] = FasilitasPoli::select('fasilitas_polis.*')
             ->where('status', true)
             ->orderByDesc('id')
-            ->get();
+            ->paginate(3);
         return view('frontend.fasilitas-poli', $data);
     }
 }

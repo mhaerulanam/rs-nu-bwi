@@ -18,7 +18,7 @@ class FasilitasPenunjangController extends Controller
         $data['fasPenunjang'] = FasilitasPenunjang::select('fasilitas_penunjangs.*')
             ->where('status', true)
             ->orderByDesc('id')
-            ->get();
+            ->paginate(3);
         return view('frontend.fasilitas-penunjang', $data);
     }
 }

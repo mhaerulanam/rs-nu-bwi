@@ -34,8 +34,10 @@
                                     <a href="service.html">
                                         <h6 style="color: #ffaa01">{{ $data->title }}</h6>
                                     </a>
-                                    {{--  <p>{{ Str::limit($data->description, 180, $end = ' ...') }}</p>  --}}
-                                    <a href="#" class="btn btn-main">Lihat</a>
+                                    <button type="button" class="btn btn-main" data-toggle="modal"
+                                    data-target="#myModal" onclick="changeText('{!! $data->description !!}', '{{ $data->title }}')">
+                                    Lihat Deskripsi
+                                </button>
                                 </div>
                             </div>
                         </div>
@@ -44,9 +46,50 @@
             @endif
         </div>
     </section>
-    <!--team section-->
-    {{--  <center style="margin-bottom: 24px">
+    <center style="margin-bottom: 24px">
         {{ $fasInap->links() }}
-    </center>  --}}
-    <!--End team section-->
+    </center>
+
+    <div class="container">
+        <div class="modal fade" id="myModal">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <!-- Modal Header -->
+                    <div class="modal-header">
+                        <h4 class="modal-title">
+                            Deskripsi <span id="heading"></span>
+                        </h4>
+                        <button type="button" class="close"
+                            data-dismiss="modal">&times;</button>
+                    </div>
+
+                    <!-- Modal body -->
+                    <div class="modal-body">
+                        <p id="pDescription"></p>
+                    </div>
+
+                    <!-- Modal footer -->
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary"
+                            data-dismiss="modal">Close</button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function changeText(description, title){
+            var header = document.getElementById("heading");
+            header.innerHTML = title;
+            var d = document.getElementById("pDescription");
+            d.innerHTML = description;
+
+        }
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
 @stop

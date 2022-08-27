@@ -19,7 +19,8 @@ class FasilitasInapController extends Controller
         $data['fasInap'] = FasilitasInap::select('fasilitas_inaps.*')
             ->where('status', true)
             ->orderByDesc('id')
-            ->get();
+            ->paginate(3);
+
         return view('frontend.fasilitas-inap', $data);
     }
 }
