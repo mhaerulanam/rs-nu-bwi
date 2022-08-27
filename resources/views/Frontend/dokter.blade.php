@@ -26,7 +26,7 @@
                         <div class="team-members tab-pane fade in active row" id="doctor">
                             @foreach ($dokters as $data)
                                 <a href="">
-                                    <div class="col-md-4 col-sm-6">
+                                    <div class="col-md-3 col-sm-6">
                                         <div class="team-person text-center">
                                             <img src="/upload/dokter/{{ $data->image }}" class="img-responsive"
                                                 style="height: 280px;  object-fit: cover; !important" alt="dokter">
