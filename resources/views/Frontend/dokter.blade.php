@@ -25,22 +25,20 @@
                         <!--Start single tab content-->
                         <div class="team-members tab-pane fade in active row" id="doctor">
                             @foreach ($dokters as $data)
-                                <a href="">
-                                    <div class="col-md-3 col-sm-6">
-                                        <div class="team-person text-center">
-                                            <img src="/upload/dokter/{{ $data->image }}" class="img-responsive"
-                                                style="height: 280px;  object-fit: cover; !important" alt="dokter">
-                                            <h6 style="color: rgb(24, 128, 67)">{{ $data->name }}</h6>
-                                            <p style="color: rgb(86, 197, 150)">{{ $data->jabatan }}</p>
-                                            <center>
-                                                <div
-                                                    style="background: rgb(240, 240, 240);  border-radius: 5pt; width: 200px; padding:10px; text-align: center; width:auto;">
-                                                    <p style="font-size: 12px; !important">{!! $data->jadwal !!}</p>
-                                                </div>
-                                            </center>
-                                        </div>
+                                <div class="col-md-3 col-sm-6" style="height: 600px; !important">
+                                    <div class="team-person text-center">
+                                        <img src="/upload/dokter/{{ $data->image }}" class="img-responsive"
+                                            style="height: 280px;  object-fit: cover; !important" alt="dokter">
+                                        <h6 style="color: rgb(24, 128, 67)">{{ $data->name }}</h6>
+                                        <p style="color: rgb(86, 197, 150)">{{ $data->jabatan }}</p>
+                                        <center>
+                                            <div
+                                                style="background: rgb(240, 240, 240);  border-radius: 5pt; width: 200px; padding:10px; text-align: center; width:auto;">
+                                                <p style="font-size: 12px; !important">{!! $data->jadwal !!}</p>
+                                            </div>
+                                        </center>
                                     </div>
-                                </a>
+                                </div>
                             @endforeach
                         </div>
                         <!--End single tab content-->
