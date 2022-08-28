@@ -35,7 +35,7 @@
                                         <h6 style="color: #ffaa01">{{ $data->title }}</h6>
                                     </a>
                                     <button type="button" class="btn btn-main" data-toggle="modal"
-                                    data-target="#myModal" onclick="changeText('{!! $data->description !!}', '{{ $data->title }}')">
+                                    data-target="#myModal" onclick="changeText({{ $data }})">
                                     Lihat Deskripsi
                                 </button>
                                 </div>
@@ -80,12 +80,9 @@
     </div>
 
     <script>
-        function changeText(description, title){
-            var header = document.getElementById("heading");
-            header.innerHTML = title;
-            var d = document.getElementById("pDescription");
-            d.innerHTML = description;
-
+        function changeText(data) {
+            $("#heading").html(data.title);
+            $("#pDescription").html(data.description);
         }
     </script>
 

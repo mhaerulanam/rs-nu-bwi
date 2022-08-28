@@ -36,7 +36,7 @@
                                     </a>
                                     {{-- Modal --}}
                                     <button type="button" class="btn btn-main" data-toggle="modal" data-target="#myModal"
-                                        onclick="changeText('{!! $data->description !!}', '{{ $data->title }}')">
+                                        onclick="changeText({{ $data }})">
                                         Lihat Deskripsi
                                     </button>
                                     {{-- close modal --}}
@@ -83,12 +83,9 @@
     </div>
 
     <script>
-        function changeText(description, title) {
-            var header = document.getElementById("heading");
-            header.innerHTML = title;
-            var d = document.getElementById("pDescription");
-            d.innerHTML = description;
-
+        function changeText(data) {
+            $("#heading").html(data.title);
+            $("#pDescription").html(data.description);
         }
     </script>
 
