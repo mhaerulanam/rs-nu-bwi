@@ -23,7 +23,7 @@
                 </div>
                 <div class="container" style="margin-bottom: 120px">
                     <center>
-                        <img src="/upload/igd/{{ $data->image }}" style="object-fit: cover" width="1000px"
+                        <img src="/upload/bpjs/{{ $data->image }}" style="object-fit: cover" width="1000px"
                             alt="Appointment">
                     </center>
                 </div>
