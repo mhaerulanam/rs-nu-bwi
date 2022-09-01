@@ -1,4 +1,5 @@
 @import url("../plugins/font-awesome-4.7.0/css/font-awesome.min.css");
+@import url("https://fonts.googleapis.com/css?family=Kavoon");
 @import url("../plugins/animate.min.css");
 @import url("../plugins/bootstrap.min.css");
 @import url("../plugins/bootstrap-select.min.css");
@@ -76,14 +77,16 @@ textarea {
 p {
     position: relative;
     line-height: 1.8em;
+    font-size: 20px;
+    color: black;
 }
 
 .section-title h3 {
     font-size: 40px;
     line-height: 50px;
-    color: #56c596;
-    font-weight: 700;
-    font-family: "Source Sans Pro", sans-serif;
+    color: #027545;
+    font-weight: 300;
+    font-family:  'Kavoon';
 }
 
 .section-title span {

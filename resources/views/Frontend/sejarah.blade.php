@@ -42,7 +42,6 @@
                                     <p style="text-align: justify">
                                         {!! $data->description !!}
                                     </p>
-
                                 </div>
                             </div>
                         </div>
@@ -50,7 +49,7 @@
                     <div class="col-md-6 col-sm-12 col-xs-12">
                         <div class="appointment-image-holder">
                             <figure>
-                                <img src="/upload/sejarah/{{ $data->image }}" style="object-fit: cover" height="500px" width="500px" alt="Appointment">
+                                <img src="/upload/sejarah/{{ $data->image }}" style="object-fit: cover" height="800px" width="500px" alt="Appointment">
                             </figure>
                         </div>
                     </div>

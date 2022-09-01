@@ -25,13 +25,13 @@
                         <div class="item" style="max-height: 450px;">
                             <div class="inner-box"style="max-height: 450px;">
                                 <div class="img_holder">
-                                    <a href="service.html">
+                                    <a href="">
                                         <img src="/upload/fas-inap/{{ $data->image }}" style="height: 200px; object-fit: cover;"
                                             alt="images" class="img-responsive">
                                     </a>
                                 </div>
                                 <div class="image-content text-center" style="max-height: 220px">
-                                    <a href="service.html">
+                                    <a href="">
                                         <h6 style="color: #ffaa01">{{ $data->title }}</h6>
                                     </a>
                                     <button type="button" class="btn btn-main" data-toggle="modal"
@@ -83,6 +83,7 @@
         function changeText(data) {
             $("#heading").html(data.title);
             $("#pDescription").html(data.description);
+            $("#pDescription").css('font-size', '20px');
         }
     </script>
 

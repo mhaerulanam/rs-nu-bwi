@@ -13,7 +13,7 @@
         </div>
     </div>
     {{-- END Banner --}}
-    <section class="service-section bg-gray section"  style=" background-image: url('/assets/bg/bg6-new.jpg');  background-size: cover; background-repeat: no-repeat; margin-bottom: 24px;">
+    <section class="service-section bg-gray section"  style=" background-image: url('/assets/bg/bg6.jpg');  background-size: cover; background-repeat: no-repeat; margin-bottom: 24px;">
         <div class="container">
             <div class="section-title text-center">
                 <h3>Daftar
@@ -26,13 +26,13 @@
                         <div class="item" style="max-height: 450px;">
                             <div class="inner-box"style="max-height: 450px;">
                                 <div class="img_holder">
-                                    <a href="service.html">
+                                    <a href="">
                                         <img src="/upload/fas-poli/{{ $data->image }}"
                                             style="height: 200px; object-fit: cover;" alt="images" class="img-responsive">
                                     </a>
                                 </div>
                                 <div class="image-content text-center" style="max-height: 220px">
-                                    <a href="service.html">
+                                    <a href="">
                                         <h6 style="color: #ffaa01">{{ $data->title }}</h6>
                                     </a>
                                     {{--  Modal  --}}
@@ -86,6 +86,7 @@
         function changeText(data) {
             $("#heading").html(data.title);
             $("#pDescription").html(data.description);
+            $("#pDescription").css('font-size', '20px');
         }
     </script>
 

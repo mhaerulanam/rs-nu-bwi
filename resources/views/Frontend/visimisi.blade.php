@@ -25,11 +25,11 @@
                     <div class="col">
                         <div class="contact-area style-two">
                             <div class="section-title">
-                                <h3>{!! $data->name !!}</h3>
+                                <h3 style="color: #002c13">{!! $data->name !!}</h3>
                             </div>
                             <div name="contact_form" class="default-form contact-form" action="sendmail.php" method="post">
                                 <div class="row" style="padding: 16px;">
-                                    <p style="text-align: justify">
+                                    <p style="text-align: justify;" >
                                         {!! $data->description !!}
                                     </p>
                                 </div>
