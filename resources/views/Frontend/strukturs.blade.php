@@ -13,16 +13,16 @@
     </div>
     {{-- END Banner --}}
     <!-- Contact Section -->
-    <section class="blog-section section style-three pb-0">
-        <div class="section-title text-center" style="margin-bottom: 40px">
+    <section class="blog-section section style-three pb-0" style=" background-image: url('/assets/bg/bg6-new.jpg');  background-size: cover; background-repeat: no-repeat;">
+        <div class="section-title text-center">
             <h3>Struktur
                 <span>Organisasi</span>
             </h3>
         </div>
-        <div class="container" style="margin-bottom: 120px">
+        <div class="container">
             @foreach ($strukturs as $data)
                 <center>
-                    <img src="/upload/struktur/{{ $data->image }}" style="object-fit: cover" width="1000px" alt="Appointment">
+                    <img src="/upload/struktur/{{ $data->image }}" style="object-fit: cover; margin-bottom:140px" width="1000px" alt="Appointment">
                 </center>
             @endforeach
         </div>

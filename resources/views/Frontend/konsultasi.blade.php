@@ -69,7 +69,7 @@
         </div>
     @endif
     <!--End Page Title-->
-    <section class="blog-section style-four section">
+    <section class="blog-section style-four section" style=" background-image: url('/assets/bg/bg2.jpg');  background-size: cover; background-repeat: no-repeat;">
         <div class="container">
             <div class="w3-bar w3-black">
                 <div class="tab-masuk" style="display: flex">

@@ -13,7 +13,7 @@
         </div>
     </div>
     {{-- END Banner --}}
-    <section class="service-section bg-gray section">
+    <section class="service-section bg-gray section"  style=" background-image: url('/assets/bg/bg6-new.jpg');  background-size: cover; background-repeat: no-repeat; margin-bottom: 24px;">
         <div class="container">
             <div class="section-title text-center">
                 <h3>Daftar

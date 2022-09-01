@@ -13,16 +13,16 @@
     </div>
     {{-- END Banner --}}
     <!-- Contact Section -->
-    <section class="service-section bg-gray section">
+    <section class="service-section bg-gray section" style=" background-image: url('/assets/bg/bg6-new.jpg');  background-size: cover; background-repeat: no-repeat;">
         <div class="section-title text-center" style="margin-bottom: 40px">
             <h3>Jadwal
                 <span>Kegiatan</span>
             </h3>
         </div>
-        <div class="container" style="margin-bottom: 120px">
+        <div class="container">
             @foreach ($jadwalKegiatan as $data)
                 <center>
-                    <img src="/upload/jadwal/{{ $data->image }}" style="object-fit: cover" width="1000px" alt="Appointment">
+                    <img src="/upload/jadwal/{{ $data->image }}" style="object-fit: cover; margin-bottom: 120px" width="1000px" alt="Appointment">
                 </center>
             @endforeach
         </div>

@@ -15,16 +15,15 @@
     @if (!$bpjs->isEmpty())
         @foreach ($bpjs as $data)
             <!-- Contact Section -->
-            <section class="blog-section section style-three pb-0">
+            <section class="blog-section section style-three pb-0" style=" background-image: url('/assets/bg/bg6-new.jpg');  background-size: cover; background-repeat: no-repeat;">
                 <div class="section-title text-center" style="margin-bottom: 40px">
                     <h3>BPJS
                         <span>Kesehatan</span>
                     </h3>
                 </div>
-                <div class="container" style="margin-bottom: 120px">
+                <div class="container">
                     <center>
-                        <img src="/upload/bpjs/{{ $data->image }}" style="object-fit: cover" width="1000px"
-                            alt="Appointment">
+                        <img src="/upload/bpjs/{{ $data->image }}" style="object-fit: cover; margin-bottom: 120px" width="1000px"                           alt="Appointment">
                     </center>
                 </div>
             </section>

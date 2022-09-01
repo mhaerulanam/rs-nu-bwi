@@ -22,7 +22,7 @@
             style="background-image:url(/frontend/images/background/3.jpg); color: rgb(218, 167, 2) !important">
             <div class="container">
                 <div class="title-text">
-                    <h1>Blog Details</h1>
+                    <h1>Tulis Konsultasi</h1>
                     <ul class="title-menu clearfix">
                         <li>
                             <a href="/">home &nbsp;/</a>
@@ -33,13 +33,14 @@
             </div>
         </section>
     @endif
-    <section class="appoinment-section section">
+    <section class="appoinment-section section"  style=" background-image: url('/assets/bg/bg2.jpg');  background-size: cover; background-repeat: no-repeat;">
         <div class="container">
-            <div class="contact-area">
+            <div class="contact-area" style="background-color: rgba(255, 255, 255, 0.8); padding: 16px;">
                 <div class="section-title">
-                    <h3>Segera
+                    <h3>Layanan
                         <span>Konsultasi</span>
                     </h3>
+                    <span style="color: rgb(121, 121, 121); font-size: 16px;">Silahkan lengkapi form di bawah ini dengan lengkap!</span>
                 </div>
                 <form name="contact_form" class="default-form contact-form" action="{{ url('/add-konsultasi')}}" method="post">
                     @csrf

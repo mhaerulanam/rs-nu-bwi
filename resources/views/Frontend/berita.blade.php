@@ -14,7 +14,7 @@
     {{-- END Banner --}}
     <!--team section-->
     <!-- Contact Section -->
-    <section class="blog-section style-four section">
+    <section class="blog-section style-four section" style=" background-image: url('/assets/bg/bg4.jpg');  background-size: cover; background-repeat: no-repeat;">
         <div class="container">
             <div class="row">
                 <div class="col-md-9 col-sm-12 col-xs-12">

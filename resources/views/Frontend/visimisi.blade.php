@@ -13,7 +13,7 @@
     </div>
     {{-- END Banner --}}
     <!-- Contact Section -->
-    <section class="blog-section section style-three pb-0">
+    <section class="blog-section section style-three pb-0" style=" background-image: url('/assets/bg/bg5.jpg');  background-size: cover; background-repeat: no-repeat; margin-bottom: 24px;">
         <div class="section-title text-center" style="margin-bottom: 40px">
             <h3>Visi Misi
                 <span>Rumah Sakit NU Banyuwangi</span>

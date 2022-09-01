@@ -1,36 +1,38 @@
 <!--Header Upper-->
 <meta name="csrf-token" content="{{ csrf_token() }}">
-<section class="header-uper">
-    <div class="container clearfix">
-        <div class="logo">
-            <figure>
-                <a href="/beranda">
-                    <img src="{{ asset('assets/logo/logo-rs-nu-bwi.png') }}" width="60"
-                        style="margin: 16px 16px 0px 16px" alt="">
-                </a>
-            </figure>
-        </div>
-        <div class="right-side">
-            <ul class="contact-info" style="margin: 16px">
-                <li class="item">
-                    <div class="icon-box" style="display:flex; justify-content: center;   align-items: center; !important">
-                        <i class="fa fa-envelope-o"></i>
-                    </div>
-                    <strong>Email</strong>
-                    <br />
-                    <a href="#">
-                        <span>nuhospital@yahoo.co.id</span>
+<section class="header-uper" >
+    <div class="backgroun-i" style=" background-image: url('/assets/bg/bg3-new.jpg'); background-size: cover; background-repeat: no-repeat; !important">
+        <div class="container clearfix">
+            <div class="logo">
+                <figure>
+                    <a href="/beranda">
+                        <img src="{{ asset('assets/logo/logo-rs-nu-bwi.png') }}" width="60"
+                            style="margin: 16px 16px 0px 16px" alt="">
                     </a>
-                </li>
-                <li class="item">
-                    <div class="icon-box" style="display:flex; justify-content: center;   align-items: center; !important">
-                        <i class="fa fa-phone"></i>
-                    </div>
-                    <strong>Call Now</strong>
-                    <br />
-                    <span>(0333) 632965</span>
-                </li>
-            </ul>
+                </figure>
+            </div>
+            <div class="right-side">
+                <ul class="contact-info" style="margin: 16px">
+                    <li class="item">
+                        <div class="icon-box" style="display:flex; justify-content: center;   align-items: center; !important">
+                            <i class="fa fa-envelope-o"></i>
+                        </div>
+                        <strong>Email</strong>
+                        <br />
+                        <a href="#">
+                            <span>nuhospital@yahoo.co.id</span>
+                        </a>
+                    </li>
+                    <li class="item">
+                        <div class="icon-box" style="display:flex; justify-content: center;   align-items: center; !important">
+                            <i class="fa fa-phone"></i>
+                        </div>
+                        <strong>Call Now</strong>
+                        <br />
+                        <span>(0333) 632965</span>
+                    </li>
+                </ul>
+            </div>
         </div>
     </div>
 </section>

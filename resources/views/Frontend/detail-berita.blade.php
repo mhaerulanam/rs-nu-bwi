@@ -17,7 +17,7 @@
     <!--End Page Title-->
 
     <!-- Contact Section -->
-    <section class="blog-section section style-four style-five">
+    <section class="blog-section section style-four style-five" style=" background-image: url('/assets/bg/bg6-new.jpg');  background-size: cover; background-repeat: no-repeat;">
         <div class="container">
             <div class="row">
                 <div class="col-md-9 col-sm-12 col-xs-12">

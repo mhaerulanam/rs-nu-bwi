@@ -65,7 +65,7 @@
         </center>
     @endif
     @if (Auth::user())
-        <section class="blog-section style-four section">
+        <section class="blog-section style-four section" style=" background-image: url('/assets/bg/bg2.jpg');  background-size: cover; background-repeat: no-repeat;">
             <div class="container">
                 <div id="kotakMasuk" class="w3-container city">
                     <div class="messaging">
@@ -200,7 +200,7 @@
             </div>
         </section>
     @else
-        <section class="blog-section style-four section">
+        <section class="blog-section style-four section" style=" background-image: url('/assets/bg/bg2.jpg');  background-size: cover; background-repeat: no-repeat;">
             <div class="container">
                 <div class="row">
                     <div class="col-md-6 col-sm-12 col-xs-12">

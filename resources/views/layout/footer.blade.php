@@ -1,5 +1,5 @@
 <!--footer-main-->
-<div class="margin" style="margin-top: 100px"></div>
+{{--  <div class="margin" style="margin-top: 100px"></div>  --}}
 <footer class="footer-main">
     <div class="footer-top">
         <div class="container">

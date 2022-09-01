@@ -12,7 +12,7 @@
         </div>
     </div>
     {{-- END Banner --}}
-    <section class="team-section section">
+    <section class="team-section section" style=" background-image: url('/assets/bg/bg5.jpg');  background-size: cover; background-repeat: no-repeat; margin-bottom: 24px;">
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
@@ -33,7 +33,7 @@
                                         <p style="color: rgb(86, 197, 150)">{{ $data->jabatan }}</p>
                                         <center>
                                             <div
-                                                style="background: rgb(240, 240, 240);  border-radius: 5pt; width: 200px; padding:10px; text-align: center; width:auto;">
+                                                style="background: rgb(255, 255, 255);  border-radius: 5pt; width: 200px; padding:10px; text-align: center; width:auto;">
                                                 <p style="font-size: 12px; !important">{!! $data->jadwal !!}</p>
                                             </div>
                                         </center>

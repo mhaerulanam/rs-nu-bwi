@@ -15,18 +15,18 @@
     @if (!$fasIgd->isEmpty())
         @foreach ($fasIgd as $data)
             <!-- Contact Section -->
-            <section class="blog-section bg-gray section style-three pb-0">
+            <section class="blog-section bg-gray section style-three pb-0" style=" background-image: url('/assets/bg/bg6-new.jpg');  background-size: cover; background-repeat: no-repeat;">
                 <div class="section-title text-center" style="margin-bottom: 40px">
                     <h3>Daftar
                         <span>IGD</span>
                     </h3>
                 </div>
-                <div class="container" style="margin-bottom: 120px">
+                <div class="container">
                     <center>
-                        <img src="/upload/fas-igd/{{ $data->image }}" style="object-fit: cover" width="1000px"
+                        <img src="/upload/fas-igd/{{ $data->image }}" style="object-fit: cover;" width="1000px"
                             alt="Appointment">
                     </center>
-                    <div class="col-md-12" style="margin-top: 24px">
+                    <div class="col-md-12" style="margin-top: 24px;  margin-bottom: 120px">
                         <div class="contact-area style-two">
                             <div class="section-title">
                                 <h3>Deskripsi</h3>

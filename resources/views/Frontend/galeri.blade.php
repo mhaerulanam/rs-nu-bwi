@@ -13,7 +13,7 @@
     </div>
     {{-- END Banner --}}
     <!-- Contact Section -->
-    <section class="gallery bg-gray">
+    <section class="gallery bg-gray" style=" background-image: url('/assets/bg/bg6-new.jpg');  background-size: cover; background-repeat: no-repeat;">
         <div class="container">
             <div class="row">
                 <div class="col-md-12">

@@ -98,7 +98,7 @@
     <!--End Service Section-->
 
     <!--team section-->
-    <section class="team-section section">
+    <section class="team-section section" style=" background-image: url('/assets/bg/bg2.jpg');  background-size: cover; background-repeat: no-repeat;">
         <div class="container">
             <div class="section-title text-center">
                 <h3>Artikel
