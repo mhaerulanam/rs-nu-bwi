@@ -9,7 +9,7 @@
                     <li>
                         <a href="/" >home &nbsp;/</a>
                     </li>
-                    <li style="color: rgb(253, 201, 30) !important">Blog Details</li>
+                    <li style="color: rgb(238, 255, 0) !important">Blog Details</li>
                 </ul>
             </div>
         </div>
