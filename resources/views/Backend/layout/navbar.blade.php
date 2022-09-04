@@ -23,6 +23,7 @@
                         class="{{ Request::segment(1) == '' ||
                         Request::segment(1) == 'banner' ||
                         Request::segment(1) == 'fasilitas' ||
+                        Request::segment(1) == 'setting' ||
                         Request::segment(1) == 'article'
                             ? 'menu-item active open'
                             : 'menu-item' }}">
@@ -49,6 +50,13 @@
                             <li class="{{ Request::segment(1) == 'article' ? 'menu-item active' : 'menu-item' }}">
                                 <a href="/article" class="menu-link">
                                     <div data-i18n="Without menu">Artikel</div>
+                                </a>
+                            </li>
+                        </ul>
+                        <ul class="menu-sub">
+                            <li class="{{ Request::segment(1) == 'setting' ? 'menu-item active' : 'menu-item' }}">
+                                <a href="/setting" class="menu-link">
+                                    <div data-i18n="Without menu">Setting</div>
                                 </a>
                             </li>
                         </ul>

@@ -71,6 +71,7 @@ Route::group(['middleware' => 'auth'], function () {
         Route::resource('/sejarah', 'SejarahController');
         Route::resource('/visimisi', 'VisiMisiTujuanController');
         Route::resource('/struktur', 'StrukturController');
+        Route::resource('/setting', 'SettingController');
         Route::resource('/staf', 'StafController');
 
         Route::resource('/dokter', 'DokterController');

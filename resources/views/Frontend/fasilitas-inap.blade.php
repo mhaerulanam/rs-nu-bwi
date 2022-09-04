@@ -34,6 +34,7 @@
                                     <a href="">
                                         <h6 style="color: #ffaa01">{{ $data->title }}</h6>
                                     </a>
+                                    <span style="padding: 8px; background-color: #ffaa01; color: black">Rp. {{ number_format($data->price, 2) }}</span> <br>
                                     <button type="button" class="btn btn-main" data-toggle="modal"
                                     data-target="#myModal" onclick="changeText({{ $data }})">
                                     Lihat Deskripsi

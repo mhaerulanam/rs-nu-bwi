@@ -4,6 +4,7 @@
             <th>No</th>
             <th>Judul</th>
             <th>Deskripsi</th>
+            <th>Harga</th>
             <th>Image</th>
             <th>Status</th>
             <th>Aksi</th>
@@ -15,6 +16,7 @@
                 <td scope="row">{{ $loop->iteration }}</td>
                 <td>{{ $data->title }}</td>
                 <td>{!! Str::limit($data->description  , 100, $end=" ...") !!}</td>
+                <td>Rp. {{ number_format($data->price, 2) }}</td>
                 <td>
                     @if ($data['image'] != null || $data['image'] != '')
                         <img src="/upload/fas-inap/{{ $data->image }}" width="100">

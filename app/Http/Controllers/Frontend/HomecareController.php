@@ -21,6 +21,9 @@ class HomecareController extends Controller
             $data['banners'] = Banner::where('status', true)
                 ->orderByDesc('id')
                 ->first();
+
+            $data['settingsInfo'] = DB::table('settings')->where('id', 1)->first();
+            $data['settingsInfoImage'] = DB::table('settings')->where('id', 2)->first();
             if (Auth::user()) {
                 $idUser = Auth::user()->id;
                 $data['homecareRiwayat'] = HomecareAdmin::select('mp.*', 'homecare_admins.*')

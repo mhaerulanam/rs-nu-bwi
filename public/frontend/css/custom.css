@@ -1,3 +1,16 @@
+.box-blog {
+    position: absolute;
+    top: 0px;
+    left: -50px;
+    background-color: #ffffff;
+    width: 300px;
+    padding: 12px;
+    border-radius: 8px;
+    box-shadow: -26px 25px 37px -17px rgba(0,0,0,0.37);
+    -webkit-box-shadow: -26px 25px 37px -17px rgba(0,0,0,0.37);
+    -moz-box-shadow: -26px 25px 37px -17px rgba(0,0,0,0.37);
+}
+
 .grid-container {
     display: grid;
     grid-template-columns: auto auto auto;

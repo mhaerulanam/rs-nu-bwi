@@ -41,6 +41,7 @@ class FasilitasInapController extends Controller
         $data = $this->validate($request, [
             'title' => 'required',
             'description' => 'required',
+            'price' => 'required',
             'image' => 'mimes:jpeg,jpg,png,gif|required|max:10000',
         ]);
 
@@ -54,6 +55,7 @@ class FasilitasInapController extends Controller
         $dtfasilitas = [
             'title' => $request->title,
             'description' => $request->description,
+            'price' => $request->price,
             'image' => $imageurl,
             'status' => $request->status,
             'created_at' => now(),
@@ -127,6 +129,7 @@ class FasilitasInapController extends Controller
             'title' => $request->title,
             'description' => $request->description,
             'image' => $imageurl,
+            'price' => $request->price,
             'status' => $request->status,
             'updated_at' => now(),
         ];

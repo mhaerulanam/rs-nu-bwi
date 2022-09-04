@@ -25,6 +25,11 @@
                             <input type="text" id="nameExLarge" class="form-control" name="title"
                                 placeholder="Masukkan Nama Fasilitas" />
                         </div>
+                        <div class="col mb-3">
+                            <label for="price" class="form-label">Harga Fasilitas Inap</label>
+                            <input type="number" id="price" class="form-control" name="price"
+                                placeholder="Masukkan Harga Fasilitas" />
+                        </div>
                     </div>
                     <div class="row">
                         <div class="col mb-3">

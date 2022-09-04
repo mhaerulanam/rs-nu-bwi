@@ -3,6 +3,23 @@
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" type="text/css"
     rel="stylesheet">
 <meta name="csrf-token" content="{{ csrf_token() }}" />
+<style>
+    .wrapper{
+        max-width: auto;
+        background: rgb(200, 255, 200);
+        height: 50px;
+        padding-top: 10px;
+        font-size: 20px;
+        font-weight: bold;
+        color: rgb(15, 88, 0);
+        text-align: right;
+    }
+
+    .marquee {
+        white-space: nowrap;
+        -webkit-animation: rightThenLeft 1.5s linear;
+    }
+</style>
 @section('content')
     <!--Page Title-->
     @if ($banners != null)
@@ -36,6 +53,9 @@
             </div>
         </section>
     @endif
+    <div class="wrapper">
+        <marquee behavior="alternate"><span class="marquee">{!! $settingsInfo->content  !!}</span></marquee>
+    </div>
     {{-- menampilkan error validasi --}}
     @if (count($errors) > 0)
         <center>
@@ -143,7 +163,7 @@
                                                 <p id="kondisiPasien"
                                                     style="padding: 16px; font-size: 14px; text-align: justify;"></p>
                                             </div>
-                                            <span class="label-contents">Pelayanan lebih lanjut hubungi : <a href="https://wa.me/6281254214412" style="color: red">081254214412 (Admin)</a></span>
+                                            <span class="label-contents">Pelayanan lebih lanjut hubungi : <a href="https://wa.me/6281515485691" style="color: red">081254214412 (Admin)</a></span>
                                         </div>
                                     </div>
                                 </div>
@@ -205,7 +225,7 @@
                 <div class="row">
                     <div class="col-md-6 col-sm-12 col-xs-12">
                         <div class="left-side">
-                            <img class="img-responsive" src="/upload/homecare/default.jpg" alt="service-image">
+                            <img class="img-responsive" src="/upload/homecare/{{ $settingsInfoImage->content }}" alt="service-image">
                         </div>
                     </div>
                     <div class="col-md-6 col-sm-12 col-xs-12">

@@ -44,6 +44,7 @@ class DatabaseSeeder extends Seeder
             MasterDiagnosaSeeder::class,
             MasterLayananSeeder::class,
             GaleriSeeder::class,
+            SettingSeeder::class,
         ]);
     }
 }
