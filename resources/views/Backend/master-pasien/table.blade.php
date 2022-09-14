@@ -26,6 +26,18 @@
                 <td>{{ $data->email }}</td>
                 <td>{!! $data->keterangan !!}</td>
                 <td class="text-center">
+                    <form action="/is-homecare/{{$data->id_user}}" method="POST"
+                        enctype="multipart/form-data">
+                        @csrf
+                        @method('PUT')
+                        @if ($data->is_homecare == true)
+                            <input type="hidden" name="is_homecare" value="0">
+                            <button type="submit" class="btn btn-secondary">Nonactive</button>
+                        @else
+                            <input type="hidden" name="is_homecare" value="1">
+                            <button type="submit" class="btn btn-success">Active</button>
+                        @endif
+                    </form>
                     <form onsubmit="return confirm('Apakah Anda Yakin ?');"
                         action="{{ route('master-pasien.destroy', $data->no_rm) }}" method="POST">
                         <a href="{{ route('master-pasien.edit', $data->no_rm) }}"

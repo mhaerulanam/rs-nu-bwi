@@ -65,6 +65,7 @@ class MasterPasienController extends Controller
             'email' => $request->email,
             'password' => Hash::make($password),
             'role' => 2,
+            'is_homecare' => false,
         ]);
 
         $dt = new DateTime();
@@ -232,6 +233,30 @@ class MasterPasienController extends Controller
                 ->withInput()
                 ->with([
                     'error' => 'Data Gagal Dihapus!',
+                ]);
+        }
+    }
+
+    public function isHomecare($id, Request $request)
+    {
+        $data = DB::table('users')
+            ->where('id', $id)
+            ->update([
+                'is_homecare' => $request->is_homecare,
+                'updated_at' => now(),
+            ]);
+
+        if ($data) {
+            return redirect('/master-pasien')
+                ->with([
+                    'success' => 'Data Berhasil Diperbarui',
+                ]);
+        } else {
+            return redirect()
+                ->back()
+                ->withInput()
+                ->with([
+                    'error' => 'Data Gagal Diperbarui!',
                 ]);
         }
     }

@@ -26,7 +26,8 @@ class HomecareController extends Controller
             $data['settingsInfoImage'] = DB::table('settings')->where('id', 2)->first();
             if (Auth::user()) {
                 $idUser = Auth::user()->id;
-                $data['homecareRiwayat'] = HomecareAdmin::select('mp.*', 'homecare_admins.*')
+                $data['is_homecare'] = Auth::user()->is_homecare;
+                $data['homecareRiwayat'] = HomecareAdmin::select('mp.*', 'homecare_admins.*',)
                     ->join('master_pasiens as mp', 'mp.no_rm', 'homecare_admins.id_pasien')
                     ->join('users as u', 'u.id', 'mp.id_user')
                     ->join('master_diagnosas as md', 'md.id', 'mp.id_diagnosa')

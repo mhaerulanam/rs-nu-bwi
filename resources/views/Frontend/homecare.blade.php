@@ -84,7 +84,7 @@
             </div>
         </center>
     @endif
-    @if (Auth::user())
+    @if (Auth::user() && $is_homecare == true)
         <section class="blog-section style-four section" style=" background-image: url('/assets/bg/bg2.jpg');  background-size: cover; background-repeat: no-repeat;">
             <div class="container">
                 <div id="kotakMasuk" class="w3-container city">

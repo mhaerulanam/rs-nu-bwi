@@ -98,6 +98,8 @@ Route::group(['middleware' => 'auth'], function () {
         Route::resource('/master-pegawai', 'MasterPegawaiController');
 
         Route::resource('/galeri', 'GaleriController');
+
+        Route::put('/is-homecare/{id}', 'MasterPasienController@isHomecare');
     });
 });
 
