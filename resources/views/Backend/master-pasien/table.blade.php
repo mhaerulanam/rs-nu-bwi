@@ -6,8 +6,8 @@
             <th>No RM</th>
             <th>Nama Pasien</th>
             <th>Alamat</th>
-            {{--  <th>Diagnosa</th>
-            <th>Layanan</th>  --}}
+            <th>Diagnosa</th>
+            {{--  <th>Layanan</th>  --}}
             <th>Email</th>
             <th>Keterangan</th>
             <th>Aksi</th>
@@ -21,10 +21,18 @@
                 <td>{{ $data->no_rm }}</td>
                 <td>{{ $data->name }}</td>
                 <td>{{ $data->alamat }}</td>
-                {{--  <td>{{ $data->diagnosa }}</td>
-                <td>{{ $data->layanan }}</td>  --}}
+                <td>{{ $data->diagnosa }}</td>
+                {{--  <td>{{ $data->layanan }}</td>  --}}
                 <td>{{ $data->email }}</td>
-                <td>{!! $data->keterangan !!}</td>
+                <td>
+                        @if ($data->is_homecare == true)
+                            <div class="badge badge-success">Homecare Aktif</div>
+                        @else
+                            <div class="badge badge-danger">Homecare Tidak Aktif</div>
+                        @endif
+                        <hr>
+                    {!! Str::limit($data->keterangan  , 100, $end=" ...")!!}
+                </td>
                 <td class="text-center">
                     <form action="/is-homecare/{{$data->id_user}}" method="POST"
                         enctype="multipart/form-data">
@@ -32,10 +40,10 @@
                         @method('PUT')
                         @if ($data->is_homecare == true)
                             <input type="hidden" name="is_homecare" value="0">
-                            <button type="submit" class="btn btn-secondary">Nonactive</button>
+                            <button type="submit" class="btn btn-secondary">Nonaktif</button>
                         @else
                             <input type="hidden" name="is_homecare" value="1">
-                            <button type="submit" class="btn btn-success">Active</button>
+                            <button type="submit" class="btn btn-success">Aktif</button>
                         @endif
                     </form>
                     <form onsubmit="return confirm('Apakah Anda Yakin ?');"

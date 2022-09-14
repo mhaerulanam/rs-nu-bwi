@@ -65,7 +65,7 @@
     @if (!empty($error))
         <div class="alert alert-danger alert-dismissible" role="alert">
             <center><strong>Silahkan <a href="/user/homecare" style="color: red; font-weight:bold;">Login</a> terlebih
-                    dahulu, untuk melihat riwayat konsultasi Anda! </strong></center>
+                    dahulu, untuk mendapatkan pelayanan! </strong></center>
         </div>
     @endif
     <!--End Page Title-->
