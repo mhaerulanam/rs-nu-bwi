@@ -118,7 +118,8 @@ input {
 }
 
 input[type="password"],
-input[type="email"] {
+input[type="email"],
+input[type="text"] {
     width: 100%;
     padding: 0 0 0 10px;
     margin: 0;
@@ -135,31 +136,36 @@ input[type="email"] {
 }
 
 input[type="password"]:focus,
-input[type="email"]:focus {
+input[type="email"]:focus,
+input[type="text"]:focus {
     border-color: #3ca9e2;
 }
 
 input[type="password"]:focus:invalid,
-input[type="email"]:focus:invalid {
+input[type="email"]:focus:invalid
+input[type="text"]:focus:invalid {
     color: #cc1e2b;
     border-color: #cc1e2b;
 }
 
 input[type="password"]:valid ~ .validation,
-input[type="email"]:valid ~ .validation {
+input[type="email"]:valid ~ .validation,
+input[type="text"]:valid ~ .validation{
     display: block;
     border-color: #0c0;
 }
 
 input[type="password"]:valid ~ .validation span,
-input[type="email"]:valid ~ .validation span {
+input[type="email"]:valid ~ .validation span,
+input[type="text"]:valid ~ .validation span {
     background: #0c0;
     position: absolute;
     border-radius: 6px;
 }
 
 input[type="password"]:valid ~ .validation span:first-child,
-input[type="email"]:valid ~ .validation span:first-child {
+input[type="email"]:valid ~ .validation span:first-child,
+input[type="text"]:valid ~ .validation span:first-child {
     top: 30px;
     left: 14px;
     width: 20px;
@@ -169,7 +175,8 @@ input[type="email"]:valid ~ .validation span:first-child {
 }
 
 input[type="password"]:valid ~ .validation span:last-child,
-input[type="email"]:valid ~ .validation span:last-child {
+input[type="email"]:valid ~ .validation span:last-child,
+input[type="text"]:valid ~ .validation span:last-child{
     top: 35px;
     left: 8px;
     width: 11px;
@@ -333,29 +340,42 @@ img {
 
 .incoming_msg_img {
     display: inline-block;
+    align-content: flex-start !important;
+    align-items: flex-start !important;
     width: 6%;
 }
 
 .received_msg {
-    display: inline-block;
-    padding: 0 0 0 10px;
-    vertical-align: top;
-    width: 92%;
+    display: inline-flex;
+    padding: 0 0 0 32px;
+    /* vertical-align: top; */
+    max-width: 92%;
 }
 
 .received_withd_msg p {
     background: #ebebeb none repeat scroll 0 0;
     border-radius: 3px;
-    color: #646464;
+    color: rgb(85, 85, 85);
     font-size: 14px;
+    text-align: left;
     margin: 0;
     padding: 5px 10px 5px 12px;
     width: 100%;
 }
 
+
 .time_date {
     color: #747474;
     display: block;
+    float: right;
+    font-size: 12px;
+    margin: 8px 0 0;
+}
+
+.time_date_respon {
+    color: #747474;
+    display: block;
+    float: left;
     font-size: 12px;
     margin: 8px 0 0;
 }
@@ -367,7 +387,8 @@ img {
 .mesgs {
     float: left;
     padding: 30px 15px 0 25px;
-    width: 60%;
+    width: 100%;
+    background-color: white;
 }
 
 .sent_msg p {
@@ -387,21 +408,33 @@ img {
 
 .sent_msg {
     float: right;
-    width: 70%;
+    max-width: 70%;
 }
 
-.input_msg_write input {
+.sent_msg p{
+    float: right;
+    text-align: right;
+}
+
+.input_msg_write textarea {
     background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
     border: medium none;
     color: #4c4c4c;
     font-size: 15px;
+    float: left;
     min-height: 48px;
     width: 100%;
+    place-content: center !important;
+    padding: 8px;
+    box-sizing:border-box;
+	/* direction:rtl; */
+	display:block;
 }
 
 .type_msg {
     border-top: 1px solid #c4c4c4;
     position: relative;
+    margin-top: 60px;
 }
 
 .msg_send_btn {
@@ -413,8 +446,8 @@ img {
     font-size: 17px;
     height: 33px;
     position: absolute;
-    right: 0;
-    top: 11px;
+    right: 16px;
+    top: 12px;
     width: 33px;
 }
 
@@ -423,19 +456,22 @@ img {
 }
 
 .msg_history {
-    height: 516px;
+    min-height: 516px;
     overflow-y: auto;
 }
 
 .container-title {
-    padding: 4px;
-    border: solid 1px rgb(209, 209, 209);
-    align-content: center;
-    text-align: center;
+    /* padding: 4px; */
+    /* border: solid 1px rgb(209, 209, 209); */
+    align-content: left;
+    text-align: left;
+    background-color: #e2e2e2;
+    padding: 16px;
 }
 
 .judul {
-    font-size: 14px;
+    text-align: left;
+    font-size: 24px;
 }
 
 .label-contents {

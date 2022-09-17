@@ -180,7 +180,7 @@
                     </ul>
                 </li>
             </ul>
-            @if (Auth::user() && Auth::user()->role == 2)
+            @if (Auth::user() && Auth::user()->role == 2 || Auth::user() && Auth::user()->role == 4)
                 <ul class="nav navbar-nav" style="float:right">
                     <li class="dropdown {{ Request::segment(1) == '/change-password' ? 'active' : '' }} float-right">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"

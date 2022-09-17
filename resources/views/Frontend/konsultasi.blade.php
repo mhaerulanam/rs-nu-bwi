@@ -64,72 +64,65 @@
     @endif
     @if (!empty($error))
         <div class="alert alert-danger alert-dismissible" role="alert">
-            <center><strong>Silahkan <a href="/user/homecare" style="color: red; font-weight:bold;">Login</a> terlebih
+            <center><strong>Silahkan <a href="" style="color: red; font-weight:bold;">Login</a> terlebih
                     dahulu, untuk mendapatkan pelayanan! </strong></center>
         </div>
     @endif
     <!--End Page Title-->
     <section class="blog-section style-four section" style=" background-image: url('/assets/bg/bg2.jpg');  background-size: cover; background-repeat: no-repeat;">
-        <div class="container">
-            <div class="w3-bar w3-black">
-                <div class="tab-masuk" style="display: flex">
-                    <button class="btn-style-one" id="kotak_masuk" onclick="openCity('kotakMasuk')">Kotak Masuk</button>
-                    <button class="btn-outline" id="kotak_terkirim" onclick="openCity('kotakTerkirim')">Kotak
-                        Terkirim</button>
+        <div class="container-fluid">
+            @if (Auth::user() && Auth::user()->role == 4 || Auth::user() && Auth::user()->role == 2)
+                <div id="kotakMasuk" class="w3-container city">
+                    @include('Frontend.konsultasi-kotak-masuk')
                 </div>
-            </div>
-            <div id="kotakMasuk" class="w3-container city">
-                @include('Frontend.konsultasi-kotak-masuk')
-            </div>
-            <div id="kotakTerkirim" class="w3-container city" style="display:none">
-                @include('Frontend.konsultasi-kotak-terkirim')
-            </div>
+            @else
+                <center>
+                    <div class="row">
+                        <div class="col-md-6 col-sm-12 col-xs-12" style="float: none">
+                            <div style="background: rgb(255, 255, 255); padding: 16px;" class="">
+                                <div id="login-form-wrap">
+                                    <h2>Login</h2>
+                                    <!-- Session Status -->
+                                    <x-auth-session-status class="mb-4" :status="session('status')" />
+                                    <div class="mb-3">
+                                        <!-- Validation Errors -->
+                                        <x-auth-validation-errors class="mb-4" :errors="$errors" />
+                                    </div>
+                                    <form id="login-form" method="POST" action="{{ route('login') }}">
+                                        @csrf
+                                        <p>
+                                            <input type="email" id="email" name="email"
+                                                placeholder="Email Address" required><i
+                                                class="validation"><span></span><span></span></i>
+                                        </p>
+                                        <p>
+                                            <input type="password" id="password" name="password" placeholder="Password"
+                                                required autocomplete="current-password" aria-describedby="password">
+                                            <i class="validation"><span></span><span></span></i>
+                                        </p>
+                                        <div class="container-text" style="float: left">
+                                            <h6 style="font-weight:normal ">Belum punya akun? <a href="/konsultasi/register" style="color: grey; font-weight: bold; ">
+                                                <span style="font-weight: bold">
+                                                    Daftar
+                                                </span>
+                                            </a></h6>
+                                        </div>
+                                        <br style="margin: 16px">
+                                        <p>
+                                            <button class="btn btn-primary d-grid w-100" id="btn-login"
+                                                type="submit">Login</button>
+                                        </p>
+                                    </form>
+                                    <!--create-account-wrap-->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </center>
+            @endif
+
         </div>
     </section>
     <script>
-        function openCity(cityName) {
-            var i;
-            var x = document.getElementsByClassName("city");
-            for (i = 0; i < x.length; i++) {
-                x[i].style.display = "none";
-            }
-            document.getElementById(cityName).style.display = "block";
-
-            console.log(cityName);
-            const km = document.getElementById("kotak_masuk");
-            const kt = document.getElementById("kotak_terkirim");
-
-            if (cityName == 'kotakTerkirim') {
-                console.log(kt);
-                document.getElementById("detailMessage").style.display =
-                    "none";
-                kt.className = 'btn-style-one';
-                km.className = "btn-outline";
-            } else {
-                console.log(km);
-                document.getElementById("detailMessageTerkirim").style.display =
-                    "none";
-                kt.className = 'btn-outline';
-                km.className = "btn-style-one";
-            }
-        }
-
-        function add() {
-            document.getElementById(coba).style.display = "hidden";
-
-            console.log(cityName);
-            const km = document.getElementById("kotak_masuk");
-            const kt = document.getElementById("kotak_terkirim");
-
-            if (cityName == 'kotakTerkirim') {
-                console.log(kt);
-                kt.className = 'btn-style-one';
-                km.className = "btn-outline";
-            } else {
-                console.log(km);
-                kt.className = 'btn-outline';
-                km.className = "btn-style-one";
-            }
-        }
     </script>
 @stop

@@ -44,11 +44,14 @@ Route::group(['namespace' => 'App\Http\Controllers\Frontend'], function () {
     Route::get('/user/detail/berita/{id}', 'BeritaController@show')->name('show-article');
     Route::get('/user/berita/{kategori}', 'BeritaController@kategori')->name('kategori-article');
 
-    Route::get('/user/konsultasi', 'KonsultasiController@index');
+    Route::get('/user/konsultasi', 'KonsultasiController@index')->name('konsultasiuser');
+    Route::get('/user/konsultasi/getData', 'KonsultasiController@getAllData')->name('getDataKonsultasi');
     Route::post('/detail-konsultasi', 'KonsultasiController@show');
-    Route::post('/add-konsultasi', 'KonsultasiController@store')->name('konsultasi-user');
+    Route::post('/add-konsultasi', 'KonsultasiController@store');
     Route::post('/update-konsultasi', 'KonsultasiController@update')->name('update-konsultasi-user');
     Route::get('/user/add-konsultasi', 'KonsultasiController@addKonsultasi');
+    Route::get('/konsultasi/register', 'KonsultasiController@register')->name('konsultasi-register');
+    Route::post('/konsultasi/register', 'KonsultasiController@registerKonsultasi')->name('register-store');
 
     Route::get('/user/homecare', 'HomecareController@index');
     Route::post('/show-homecare', 'HomecareController@show');
