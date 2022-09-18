@@ -1,4 +1,6 @@
-<table id="example" class="table table-bordered" style="width:100%">
+<link href="{{ asset('frontend/css/custom.css')}}" rel="stylesheet">
+<link href="{{ asset('frontend/css/konsultasi.css') }}" rel="stylesheet">
+{{--  <table id="example" class="table table-bordered" style="width:100%">
     <thead>
         <tr>
             <th></th>
@@ -48,4 +50,15 @@
             </tr>
         @endforelse
     </tbody>
-</table>
+</table>  --}}
+<div class="container">
+    {{--  <div class="w3-bar w3-black">
+        <div class="tab-masuk" style="display: flex">
+            <button class="btn-style-one" id="kotak_masuk" onclick="openCity('kotakMasuk')">Kotak Masuk</button>
+            <button class="btn-outline" id="kotak_terkirim" onclick="openCity('kotakTerkirim')">Kotak
+                Terkirim</button>
+        </div>
+    </div>  --}}
+    @include('Backend.konsultasi-admin.chat.konsultasi-kotak-masuk')
+</div>
+

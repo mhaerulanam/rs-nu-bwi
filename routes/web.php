@@ -92,6 +92,9 @@ Route::group(['middleware' => 'auth'], function () {
 
         Route::resource('/konsultasi-admin', 'KonsultasiAdminController');
         Route::get('/konsultasi-admin/{id}/detail', 'KonsultasiAdminController@detail')->name('detail-konsultasi-admin');
+        Route::GET('/konsultasi/listData', 'KonsultasiAdminController@getAllData')->name('listDataKonsultasi');
+        Route::GET('/konsultasi/detail/admin/{id}', 'KonsultasiAdminController@getDetailData')->name('admin-detail-KonsultasiNotRead');
+        Route::post('/admin-add-konsultasi', 'KonsultasiAdminController@store');
 
         Route::resource('/homecare-admin', 'HomecareAdminController');
 

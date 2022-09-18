@@ -4,7 +4,9 @@ namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
 use App\Models\KonsultasiAdmin;
+use Exception;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 
 class KonsultasiAdminController extends Controller
@@ -18,6 +20,58 @@ class KonsultasiAdminController extends Controller
     {
         $data['konsultasiAdmin'] =  KonsultasiAdmin::all()->sortDesc();
         return view('Backend/konsultasi-admin.index', $data);
+    }
+
+
+    public function getAllData()
+    {
+        try {
+            $data['listKonsultasi'] = DB::table('chat_konsultasi as ck')
+                                    ->select('rm.*', 'u.name','ck.messages','ck.status')
+                                    ->join('room_konsultasi as rm', 'rm.id', 'ck.id_room')
+                                    ->join('users as u', 'u.id', 'rm.id_user')
+                                    ->groupBy('ck.id_room')
+                                    ->orderBy('ck.created_at', 'desc')
+                                    ->get();
+
+            return response()->json($data);
+        } catch (Exception $th) {
+            return $th->getMessage();
+            return back()->withError($th->getMessage());
+        } catch (\Illuminate\Database\QueryException $th) {
+            return back()->withError($th->getMessage());
+        }
+
+    }
+
+    public function getDetailData($id)
+    {
+        try {
+            $data['id']= $id;
+            $room = DB::table('room_konsultasi')->where('id', $id)->first();
+            $data['idRoom'] = $room->id;
+            $data['konsultasi'] = DB::table('chat_konsultasi as ck')
+                                    ->join('room_konsultasi as rm', 'rm.id', 'ck.id_room')
+                                    ->select('u.name','ck.*')
+                                    ->join('users as u', 'u.id', 'rm.id_user')
+                                    ->where('id_room', $id)
+                                    ->get();
+
+            $dtKonsultasi = [
+                'status' => true,
+                'updated_at' => now(),
+            ];
+
+            $save = DB::table('chat_konsultasi')->where('id_room', $id)->where('perawat_id', null)->update($dtKonsultasi);
+
+            return response()->json($data);
+        } catch (Exception $th) {
+            return $th->getMessage();
+            return back()->withError($th->getMessage());
+        } catch (\Illuminate\Database\QueryException $th) {
+            return back()->withError($th->getMessage());
+        }
+
     }
 
     /**
@@ -38,7 +92,29 @@ class KonsultasiAdminController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $dtKonsultasi = [
+            'id_room' => $request->idRoom,
+            'perawat_id' => Auth::user()->id,
+            'messages' => $request->messages,
+            'status' => false,
+            'created_at' => now(),
+        ];
+
+        $save = DB::table('chat_konsultasi')->insert($dtKonsultasi);
+
+        if ($save) {
+            return redirect('/konsultasi-admin')
+                ->with([
+                    'success' => 'Konsultasi berhasil terkirim',
+                ]);
+        } else {
+            return redirect()
+                ->back()
+                ->withInput()
+                ->with([
+                    'error' => 'Konsultasi gagal!',
+                ]);
+        }
     }
 
     /**
