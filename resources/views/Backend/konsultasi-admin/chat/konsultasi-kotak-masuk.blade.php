@@ -79,7 +79,7 @@
 </script>
 
 <script>
-    var interval = 5000;
+    var interval = 15000;
     setInterval(function () {
         onGetListData();
     }, interval);
